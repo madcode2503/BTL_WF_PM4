@@ -1,0 +1,66 @@
+# Windows image file thumbnails
+Thumbs.db
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer Package
+*.vssscc
+*.vspscc
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# User-specific files for Visual Studio for Mac
+.vscode/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ebug-x86/
+[Dd]ebug-x64/
+[Dd]ebug-AnyCPU/
+[Dd]ebug-netcoreapp*/ 
+[Dd]ebug-windows/
+[Dd]ebug-AnyCPU/
+[Dd]ebug-x86/
+[Dd]ebug-x64/
+
+# Output of NuGet
+*.nupkg
+*.snupkg
+
+# Windows Installer
+*.cab
+*.msi
+*.msm
+*.msp
+
+# JetBrains Rider
+.idea/
+
+# User-specific files for Rider
+.idea/.idea/
+.idea/*.iml
+.idea/.name
+.idea/modules.xml
+.idea/.gitignore
+
+# Tye generated files
+.tye/
+
+# VS for Mac configuration
+.vscode/
+
+# User-specific files for Visual Studio
+.vs2019/
+.vs2017/
+
+# VS for Mac generated files
+.vscode/

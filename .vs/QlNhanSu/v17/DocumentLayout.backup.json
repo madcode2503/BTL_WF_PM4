@@ -1,0 +1,107 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\allan\\source\\repos\\QlNhanSu\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A4A5FCA2-0EC6-4199-B0E0-728AB7F99362}|QlNhanSu\\QlNhanSu.csproj|c:\\users\\allan\\source\\repos\\qlnhansu\\qlnhansu\\views\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A4A5FCA2-0EC6-4199-B0E0-728AB7F99362}|QlNhanSu\\QlNhanSu.csproj|solutionrelative:qlnhansu\\views\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4A5FCA2-0EC6-4199-B0E0-728AB7F99362}|QlNhanSu\\QlNhanSu.csproj|c:\\users\\allan\\source\\repos\\qlnhansu\\qlnhansu\\models\\qlnhansu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4A5FCA2-0EC6-4199-B0E0-728AB7F99362}|QlNhanSu\\QlNhanSu.csproj|solutionrelative:qlnhansu\\models\\qlnhansu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4A5FCA2-0EC6-4199-B0E0-728AB7F99362}|QlNhanSu\\QlNhanSu.csproj|c:\\users\\allan\\source\\repos\\qlnhansu\\qlnhansu\\models\\qlnhansu.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
+      "RelativeMoniker": "D:0:0:{A4A5FCA2-0EC6-4199-B0E0-728AB7F99362}|QlNhanSu\\QlNhanSu.csproj|solutionrelative:qlnhansu\\models\\qlnhansu.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4A5FCA2-0EC6-4199-B0E0-728AB7F99362}|QlNhanSu\\QlNhanSu.csproj|c:\\users\\allan\\source\\repos\\qlnhansu\\qlnhansu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4A5FCA2-0EC6-4199-B0E0-728AB7F99362}|QlNhanSu\\QlNhanSu.csproj|solutionrelative:qlnhansu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4A5FCA2-0EC6-4199-B0E0-728AB7F99362}|QlNhanSu\\QlNhanSu.csproj|c:\\users\\allan\\source\\repos\\qlnhansu\\qlnhansu\\views\\formmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4A5FCA2-0EC6-4199-B0E0-728AB7F99362}|QlNhanSu\\QlNhanSu.csproj|solutionrelative:qlnhansu\\views\\formmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QLNhanSu.designer.cs",
+              "DocumentMoniker": "C:\\Users\\allan\\source\\repos\\QlNhanSu\\QlNhanSu\\Models\\QLNhanSu.designer.cs",
+              "RelativeDocumentMoniker": "QlNhanSu\\Models\\QLNhanSu.designer.cs",
+              "ToolTip": "C:\\Users\\allan\\source\\repos\\QlNhanSu\\QlNhanSu\\Models\\QLNhanSu.designer.cs",
+              "RelativeToolTip": "QlNhanSu\\Models\\QLNhanSu.designer.cs",
+              "ViewState": "AgIAAF8DAAAAAAAAAAAtwG0DAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T09:02:55.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QLNhanSu.dbml",
+              "DocumentMoniker": "C:\\Users\\allan\\source\\repos\\QlNhanSu\\QlNhanSu\\Models\\QLNhanSu.dbml",
+              "RelativeDocumentMoniker": "QlNhanSu\\Models\\QLNhanSu.dbml",
+              "ToolTip": "C:\\Users\\allan\\source\\repos\\QlNhanSu\\QlNhanSu\\Models\\QLNhanSu.dbml",
+              "RelativeToolTip": "QlNhanSu\\Models\\QLNhanSu.dbml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2024-11-26T08:58:45.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormMain.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\allan\\source\\repos\\QlNhanSu\\QlNhanSu\\Views\\FormMain.cs",
+              "RelativeDocumentMoniker": "QlNhanSu\\Views\\FormMain.cs",
+              "ToolTip": "C:\\Users\\allan\\source\\repos\\QlNhanSu\\QlNhanSu\\Views\\FormMain.cs [Design]*",
+              "RelativeToolTip": "QlNhanSu\\Views\\FormMain.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T08:57:13.656Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormMain.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\allan\\source\\repos\\QlNhanSu\\QlNhanSu\\Views\\FormMain.Designer.cs",
+              "RelativeDocumentMoniker": "QlNhanSu\\Views\\FormMain.Designer.cs",
+              "ToolTip": "C:\\Users\\allan\\source\\repos\\QlNhanSu\\QlNhanSu\\Views\\FormMain.Designer.cs*",
+              "RelativeToolTip": "QlNhanSu\\Views\\FormMain.Designer.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T08:57:38.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\allan\\source\\repos\\QlNhanSu\\QlNhanSu\\Program.cs",
+              "RelativeDocumentMoniker": "QlNhanSu\\Program.cs",
+              "ToolTip": "C:\\Users\\allan\\source\\repos\\QlNhanSu\\QlNhanSu\\Program.cs",
+              "RelativeToolTip": "QlNhanSu\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T08:56:28.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
