@@ -1,0 +1,80 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code settings
+.vscode/
+
+# Visual Studio working files
+.vs/
+*.ide*
+
+# Backup files
+*.bak
+*.swp
+*.sw~
+
+# Logs
+*.log
+*.tlog
+
+# Temporary files
+*.tmp
+*.temp
+
+# Deployment files
+.publish/
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored if package restore is enabled
+# Uncomment if necessary
+# packages/
+
+# Windows Crash Dump files
+*.dmp
+
+# IIS config files
+iisexpress/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+
+# JetBrains Rider related
+*.ipr
+*.iws
+.idea/
+
+# Database files
+*.mdf
+*.ldf
+
+# Other files to ignore
+*.cache
+*.pdb
+*.ilk
+*.lib
