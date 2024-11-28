@@ -12,7 +12,7 @@ namespace QLNhanSu.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.12.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,11 +26,22 @@ namespace QLNhanSu.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-5S7618AC\\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Securi" +
-            "ty=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=chau\\SQLEXPRESS;Initial Catalog=QUANLYNHANSU;Integrated Security=True" +
+            ";TrustServerCertificate=True")]
         public string QLNhanSuConnectionString {
             get {
                 return ((string)(this["QLNhanSuConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=chau\\sqlexpress;Initial Catalog=QUANLYNHANSU;Integrated Security=True" +
+            ";Encrypt=False")]
+        public string QUANLYNHANSUConnectionString {
+            get {
+                return ((string)(this["QUANLYNHANSUConnectionString"]));
             }
         }
     }

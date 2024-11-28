@@ -22,7 +22,7 @@ namespace QLNhanSu.Models
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QLNhanSu")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QUANLYNHANSU")]
 	public partial class QLNhanSuDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -57,7 +57,7 @@ namespace QLNhanSu.Models
     #endregion
 		
 		public QLNhanSuDataContext() : 
-				base(global::QLNhanSu.Properties.Settings.Default.QLNhanSuConnectionString, mappingSource)
+				base(global::QLNhanSu.Properties.Settings.Default.QUANLYNHANSUConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
