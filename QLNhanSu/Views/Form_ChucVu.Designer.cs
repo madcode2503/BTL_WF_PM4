@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlCRUD = new System.Windows.Forms.Panel();
             this.pnlData = new System.Windows.Forms.Panel();
-            this.lbl_Title = new System.Windows.Forms.Label();
-            this.quảnLýNhânSựToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýChứcVụToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvChucVu = new System.Windows.Forms.DataGridView();
             this.menuStripQLNS = new System.Windows.Forms.MenuStrip();
+            this.quảnLýNhânSựToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýChứcVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_Title = new System.Windows.Forms.Label();
             this.lblTenChucVu = new System.Windows.Forms.Label();
             this.lblLuongCoBan = new System.Windows.Forms.Label();
             this.txtTenChucVu = new System.Windows.Forms.TextBox();
@@ -41,83 +41,81 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.dgvChucVu = new System.Windows.Forms.DataGridView();
-            this.lbl_ID = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.pnlCRUD.SuspendLayout();
+            this.pnlCRUD = new System.Windows.Forms.Panel();
+            this.splitContainerChucVu = new System.Windows.Forms.SplitContainer();
             this.pnlData.SuspendLayout();
-            this.menuStripQLNS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChucVu)).BeginInit();
+            this.menuStripQLNS.SuspendLayout();
+            this.pnlCRUD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerChucVu)).BeginInit();
+            this.splitContainerChucVu.Panel1.SuspendLayout();
+            this.splitContainerChucVu.Panel2.SuspendLayout();
+            this.splitContainerChucVu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlCRUD
-            // 
-            this.pnlCRUD.Controls.Add(this.txtID);
-            this.pnlCRUD.Controls.Add(this.lbl_ID);
-            this.pnlCRUD.Controls.Add(this.btnDelete);
-            this.pnlCRUD.Controls.Add(this.btnEdit);
-            this.pnlCRUD.Controls.Add(this.btnAdd);
-            this.pnlCRUD.Controls.Add(this.txtLuongCoBan);
-            this.pnlCRUD.Controls.Add(this.txtTenChucVu);
-            this.pnlCRUD.Controls.Add(this.lblLuongCoBan);
-            this.pnlCRUD.Controls.Add(this.lblTenChucVu);
-            this.pnlCRUD.Controls.Add(this.lbl_Title);
-            this.pnlCRUD.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlCRUD.Location = new System.Drawing.Point(0, 24);
-            this.pnlCRUD.Name = "pnlCRUD";
-            this.pnlCRUD.Size = new System.Drawing.Size(278, 437);
-            this.pnlCRUD.TabIndex = 7;
             // 
             // pnlData
             // 
             this.pnlData.Controls.Add(this.dgvChucVu);
             this.pnlData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlData.Location = new System.Drawing.Point(278, 24);
+            this.pnlData.Location = new System.Drawing.Point(0, 0);
             this.pnlData.Name = "pnlData";
-            this.pnlData.Size = new System.Drawing.Size(506, 437);
+            this.pnlData.Size = new System.Drawing.Size(519, 437);
             this.pnlData.TabIndex = 8;
             // 
-            // lbl_Title
+            // dgvChucVu
             // 
-            this.lbl_Title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Title.AutoSize = true;
-            this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(54, 14);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(181, 25);
-            this.lbl_Title.TabIndex = 0;
-            this.lbl_Title.Text = "Quản Lý Chức Vụ";
-            this.lbl_Title.Click += new System.EventHandler(this.lbl_Title_Click);
-            // 
-            // quảnLýNhânSựToolStripMenuItem1
-            // 
-            this.quảnLýNhânSựToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnLýChứcVụToolStripMenuItem2});
-            this.quảnLýNhânSựToolStripMenuItem1.Name = "quảnLýNhânSựToolStripMenuItem1";
-            this.quảnLýNhânSựToolStripMenuItem1.Size = new System.Drawing.Size(110, 20);
-            this.quảnLýNhânSựToolStripMenuItem1.Text = "Quản Lý Nhân Sự";
-            this.quảnLýNhânSựToolStripMenuItem1.Click += new System.EventHandler(this.quảnLýChứcVụToolStripMenuItem1_Click);
-            // 
-            // quảnLýChứcVụToolStripMenuItem2
-            // 
-            this.quảnLýChứcVụToolStripMenuItem2.Name = "quảnLýChứcVụToolStripMenuItem2";
-            this.quảnLýChứcVụToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.quảnLýChứcVụToolStripMenuItem2.Text = "Quản Lý Chức Vụ";
+            this.dgvChucVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChucVu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvChucVu.Location = new System.Drawing.Point(0, 0);
+            this.dgvChucVu.Name = "dgvChucVu";
+            this.dgvChucVu.Size = new System.Drawing.Size(519, 437);
+            this.dgvChucVu.TabIndex = 0;
+            this.dgvChucVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChucVu_CellClick);
+            this.dgvChucVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChucVu_CellContentClick);
             // 
             // menuStripQLNS
             // 
             this.menuStripQLNS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnLýNhânSựToolStripMenuItem1});
+            this.quảnLýNhânSựToolStripMenuItem});
             this.menuStripQLNS.Location = new System.Drawing.Point(0, 0);
             this.menuStripQLNS.Name = "menuStripQLNS";
             this.menuStripQLNS.Size = new System.Drawing.Size(784, 24);
             this.menuStripQLNS.TabIndex = 6;
             this.menuStripQLNS.Text = "menuStrip1";
             // 
+            // quảnLýNhânSựToolStripMenuItem
+            // 
+            this.quảnLýNhânSựToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.quảnLýChứcVụToolStripMenuItem});
+            this.quảnLýNhânSựToolStripMenuItem.Name = "quảnLýNhânSựToolStripMenuItem";
+            this.quảnLýNhânSựToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.quảnLýNhânSựToolStripMenuItem.Text = "Quản Lý Nhân Sự";
+            this.quảnLýNhânSựToolStripMenuItem.Click += new System.EventHandler(this.quảnLýNhânSựToolStripMenuItem_Click);
+            // 
+            // quảnLýChứcVụToolStripMenuItem
+            // 
+            this.quảnLýChứcVụToolStripMenuItem.Name = "quảnLýChứcVụToolStripMenuItem";
+            this.quảnLýChứcVụToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quảnLýChứcVụToolStripMenuItem.Text = "Quản Lý Chức Vụ";
+            this.quảnLýChứcVụToolStripMenuItem.Click += new System.EventHandler(this.quảnLýChứcVụToolStripMenuItem_Click);
+            // 
+            // lbl_Title
+            // 
+            this.lbl_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_Title.AutoSize = true;
+            this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Title.Location = new System.Drawing.Point(40, 24);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(181, 25);
+            this.lbl_Title.TabIndex = 0;
+            this.lbl_Title.Text = "Quản Lý Chức Vụ";
+            this.lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Title.Click += new System.EventHandler(this.lbl_Title_Click);
+            // 
             // lblTenChucVu
             // 
             this.lblTenChucVu.AutoSize = true;
-            this.lblTenChucVu.Location = new System.Drawing.Point(19, 150);
+            this.lblTenChucVu.Location = new System.Drawing.Point(19, 118);
             this.lblTenChucVu.Margin = new System.Windows.Forms.Padding(10, 10, 10, 5);
             this.lblTenChucVu.Name = "lblTenChucVu";
             this.lblTenChucVu.Size = new System.Drawing.Size(70, 13);
@@ -128,7 +126,7 @@
             // lblLuongCoBan
             // 
             this.lblLuongCoBan.AutoSize = true;
-            this.lblLuongCoBan.Location = new System.Drawing.Point(19, 195);
+            this.lblLuongCoBan.Location = new System.Drawing.Point(19, 163);
             this.lblLuongCoBan.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.lblLuongCoBan.Name = "lblLuongCoBan";
             this.lblLuongCoBan.Size = new System.Drawing.Size(75, 13);
@@ -139,10 +137,10 @@
             // 
             this.txtTenChucVu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTenChucVu.Location = new System.Drawing.Point(114, 147);
+            this.txtTenChucVu.Location = new System.Drawing.Point(114, 115);
             this.txtTenChucVu.Margin = new System.Windows.Forms.Padding(10, 5, 10, 10);
             this.txtTenChucVu.Name = "txtTenChucVu";
-            this.txtTenChucVu.Size = new System.Drawing.Size(154, 20);
+            this.txtTenChucVu.Size = new System.Drawing.Size(137, 20);
             this.txtTenChucVu.TabIndex = 3;
             this.txtTenChucVu.TextChanged += new System.EventHandler(this.txtTenChucVu_TextChanged);
             // 
@@ -150,15 +148,16 @@
             // 
             this.txtLuongCoBan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLuongCoBan.Location = new System.Drawing.Point(111, 188);
+            this.txtLuongCoBan.Location = new System.Drawing.Point(111, 156);
             this.txtLuongCoBan.Margin = new System.Windows.Forms.Padding(10, 5, 10, 10);
             this.txtLuongCoBan.Name = "txtLuongCoBan";
-            this.txtLuongCoBan.Size = new System.Drawing.Size(154, 20);
+            this.txtLuongCoBan.Size = new System.Drawing.Size(140, 20);
             this.txtLuongCoBan.TabIndex = 4;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(170, 277);
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Location = new System.Drawing.Point(153, 277);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(80, 30);
@@ -169,7 +168,8 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(170, 323);
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Location = new System.Drawing.Point(153, 323);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(80, 30);
             this.btnEdit.TabIndex = 6;
@@ -179,7 +179,8 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(170, 371);
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(153, 371);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(80, 30);
             this.btnDelete.TabIndex = 7;
@@ -187,77 +188,79 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // dgvChucVu
+            // pnlCRUD
             // 
-            this.dgvChucVu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvChucVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChucVu.Location = new System.Drawing.Point(0, 0);
-            this.dgvChucVu.Name = "dgvChucVu";
-            this.dgvChucVu.Size = new System.Drawing.Size(506, 437);
-            this.dgvChucVu.TabIndex = 0;
-            this.dgvChucVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChucVu_CellClick);
+            this.pnlCRUD.Controls.Add(this.btnDelete);
+            this.pnlCRUD.Controls.Add(this.btnEdit);
+            this.pnlCRUD.Controls.Add(this.btnAdd);
+            this.pnlCRUD.Controls.Add(this.txtLuongCoBan);
+            this.pnlCRUD.Controls.Add(this.txtTenChucVu);
+            this.pnlCRUD.Controls.Add(this.lblLuongCoBan);
+            this.pnlCRUD.Controls.Add(this.lblTenChucVu);
+            this.pnlCRUD.Controls.Add(this.lbl_Title);
+            this.pnlCRUD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCRUD.Location = new System.Drawing.Point(0, 0);
+            this.pnlCRUD.Name = "pnlCRUD";
+            this.pnlCRUD.Size = new System.Drawing.Size(261, 437);
+            this.pnlCRUD.TabIndex = 7;
             // 
-            // lbl_ID
+            // splitContainerChucVu
             // 
-            this.lbl_ID.AutoSize = true;
-            this.lbl_ID.Location = new System.Drawing.Point(22, 105);
-            this.lbl_ID.Margin = new System.Windows.Forms.Padding(10, 10, 10, 5);
-            this.lbl_ID.Name = "lbl_ID";
-            this.lbl_ID.Size = new System.Drawing.Size(18, 13);
-            this.lbl_ID.TabIndex = 8;
-            this.lbl_ID.Text = "ID";
+            this.splitContainerChucVu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerChucVu.Location = new System.Drawing.Point(0, 24);
+            this.splitContainerChucVu.Name = "splitContainerChucVu";
             // 
-            // txtID
+            // splitContainerChucVu.Panel1
             // 
-            this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtID.Location = new System.Drawing.Point(114, 105);
-            this.txtID.Margin = new System.Windows.Forms.Padding(10, 5, 10, 10);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(151, 20);
-            this.txtID.TabIndex = 9;
-            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+            this.splitContainerChucVu.Panel1.Controls.Add(this.pnlCRUD);
+            // 
+            // splitContainerChucVu.Panel2
+            // 
+            this.splitContainerChucVu.Panel2.Controls.Add(this.pnlData);
+            this.splitContainerChucVu.Size = new System.Drawing.Size(784, 437);
+            this.splitContainerChucVu.SplitterDistance = 261;
+            this.splitContainerChucVu.TabIndex = 9;
             // 
             // Form_ChucVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.pnlData);
-            this.Controls.Add(this.pnlCRUD);
+            this.Controls.Add(this.splitContainerChucVu);
             this.Controls.Add(this.menuStripQLNS);
             this.MainMenuStrip = this.menuStripQLNS;
             this.Name = "Form_ChucVu";
             this.Text = "Form_ChucVu";
-            this.pnlCRUD.ResumeLayout(false);
-            this.pnlCRUD.PerformLayout();
             this.pnlData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChucVu)).EndInit();
             this.menuStripQLNS.ResumeLayout(false);
             this.menuStripQLNS.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChucVu)).EndInit();
+            this.pnlCRUD.ResumeLayout(false);
+            this.pnlCRUD.PerformLayout();
+            this.splitContainerChucVu.Panel1.ResumeLayout(false);
+            this.splitContainerChucVu.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerChucVu)).EndInit();
+            this.splitContainerChucVu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlCRUD;
-        private System.Windows.Forms.Label lbl_Title;
         private System.Windows.Forms.Panel pnlData;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýNhânSựToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýChứcVụToolStripMenuItem2;
-        private System.Windows.Forms.MenuStrip menuStripQLNS;
-        private System.Windows.Forms.Label lblLuongCoBan;
-        private System.Windows.Forms.Label lblTenChucVu;
-        private System.Windows.Forms.TextBox txtLuongCoBan;
-        private System.Windows.Forms.TextBox txtTenChucVu;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.DataGridView dgvChucVu;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label lbl_ID;
+        private System.Windows.Forms.MenuStrip menuStripQLNS;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýNhânSựToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýChứcVụToolStripMenuItem;
+        private System.Windows.Forms.Label lbl_Title;
+        private System.Windows.Forms.Label lblTenChucVu;
+        private System.Windows.Forms.Label lblLuongCoBan;
+        private System.Windows.Forms.TextBox txtTenChucVu;
+        private System.Windows.Forms.TextBox txtLuongCoBan;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Panel pnlCRUD;
+        private System.Windows.Forms.SplitContainer splitContainerChucVu;
     }
 }

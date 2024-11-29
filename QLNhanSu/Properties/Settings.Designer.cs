@@ -44,5 +44,16 @@ namespace QLNhanSu.Properties {
                 return ((string)(this["QUANLYNHANSUConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=chau\\sqlexpress;Initial Catalog=QLNhanSu;Integrated Security=True;Enc" +
+            "rypt=False")]
+        public string QLNhanSuConnectionString1 {
+            get {
+                return ((string)(this["QLNhanSuConnectionString1"]));
+            }
+        }
     }
 }

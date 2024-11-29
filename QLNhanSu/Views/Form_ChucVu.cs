@@ -24,7 +24,6 @@ namespace QLNhanSu.Views
 
         private void ClearForm()
         {
-            txtID.Clear();
             txtTenChucVu.Clear();
             txtLuongCoBan.Clear();
         }
@@ -36,10 +35,8 @@ namespace QLNhanSu.Views
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = dgvChucVu.Rows[e.RowIndex];
-
-                    txtID.Text = row.Cells["id"].Value.ToString();
-                    txtTenChucVu.Text = row.Cells["ten"].Value.ToString();
-                    txtLuongCoBan.Text = row.Cells["luong_co_ban"].Value.ToString();
+                    txtTenChucVu.Text = row.Cells["TenChucVu"].Value.ToString();
+                    txtLuongCoBan.Text = row.Cells["LuongCoBan"].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -52,6 +49,7 @@ namespace QLNhanSu.Views
         private void LoadData()
         {
             var result = chucVuController.GetAllChucVu();
+            dgvChucVu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             if (result.ErrCode == EnumErrcode.Success)
             {
                 dgvChucVu.DataSource = result.Data;
@@ -62,11 +60,6 @@ namespace QLNhanSu.Views
             }
         }
 
-
-        private void quảnLýChứcVụToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -87,17 +80,22 @@ namespace QLNhanSu.Views
         {
             try
             {
-                if (string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtTenChucVu.Text) || string.IsNullOrEmpty(txtLuongCoBan.Text))
+                if (string.IsNullOrEmpty(txtTenChucVu.Text) || string.IsNullOrEmpty(txtLuongCoBan.Text))
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
                     return;
                 }
 
-                var newChucVu = new tbl_ChucVu
+                if (!decimal.TryParse(txtLuongCoBan.Text, out decimal luongCoBan))
                 {
-                    id = int.Parse(txtID.Text),
-                    ten = txtTenChucVu.Text,  
-                    luong_co_ban = decimal.Parse(txtLuongCoBan.Text)
+                    MessageBox.Show("Lương cơ bản không hợp lệ.");
+                    return;
+                }
+
+                var newChucVu = new ChucVu
+                {
+                    TenChucVu = txtTenChucVu.Text,
+                    LuongCoBan = luongCoBan
                 };
 
                 var result = chucVuController.AddChucVu(newChucVu);
@@ -122,23 +120,30 @@ namespace QLNhanSu.Views
         {
             try
             {
-                if (string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtTenChucVu.Text) || string.IsNullOrEmpty(txtLuongCoBan.Text))
+                if (dgvChucVu.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn một chức vụ để sửa.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(txtTenChucVu.Text) || string.IsNullOrEmpty(txtLuongCoBan.Text))
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
                     return;
                 }
 
-                if (!int.TryParse(txtID.Text, out int id) || !decimal.TryParse(txtLuongCoBan.Text, out decimal luongCoBan))
+                if (!int.TryParse(dgvChucVu.SelectedRows[0].Cells["ID"].Value.ToString(), out int id) ||
+                    !decimal.TryParse(txtLuongCoBan.Text, out decimal luongCoBan))
                 {
-                    MessageBox.Show("ID hoặc Lương cơ bản không hợp lệ.");
+                    MessageBox.Show("Dữ liệu không hợp lệ.");
                     return;
                 }
 
-                var updatedChucVu = new tbl_ChucVu
+                var updatedChucVu = new ChucVu
                 {
-                    id = id,
-                    ten = txtTenChucVu.Text,
-                    luong_co_ban = luongCoBan
+                    ID = id,
+                    TenChucVu = txtTenChucVu.Text,
+                    LuongCoBan = luongCoBan
                 };
 
                 var result = chucVuController.EditChucVu(updatedChucVu);
@@ -163,29 +168,35 @@ namespace QLNhanSu.Views
         {
             try
             {
-                if (string.IsNullOrEmpty(txtID.Text))
+                if (dgvChucVu.SelectedRows.Count > 0)
                 {
-                    MessageBox.Show("Vui lòng nhập ID của chức vụ cần xóa.");
-                    return;
-                }
+                    int selectedRowIndex = dgvChucVu.SelectedRows[0].Index;
+                    int idToDelete = Convert.ToInt32(dgvChucVu.Rows[selectedRowIndex].Cells["ID"].Value);
 
-                int idToDelete = int.Parse(txtID.Text);
+                    DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa chức vụ này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                var result = chucVuController.DeleteChucVu(idToDelete);
-                if (result.ErrCode == EnumErrcode.Success)
-                {
-                    MessageBox.Show(result.ErrDesc);
-                    ClearForm();
-                    LoadData();
+                    if (confirm == DialogResult.Yes)
+                    {
+                        var result = chucVuController.DeleteChucVu(idToDelete);
+                        if (result.ErrCode == EnumErrcode.Success)
+                        {
+                            MessageBox.Show(result.ErrDesc, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadData();
+                        }
+                        else
+                        {
+                            MessageBox.Show(result.ErrDesc, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show(result.ErrDesc);
+                    MessageBox.Show("Vui lòng chọn một chức vụ cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -195,6 +206,21 @@ namespace QLNhanSu.Views
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quảnLýNhânSựToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quảnLýChứcVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvChucVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
