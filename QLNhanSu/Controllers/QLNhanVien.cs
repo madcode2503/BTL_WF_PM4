@@ -126,7 +126,7 @@ namespace QLNhanSu.Controllers
                 rs.ErrDesc = "xoa that bai";
             }
         }
-        public static void UpdateNhanVien(int id, string ho, string ten, DateTime ngaySinh, bool gioiTinh, string diachi, string email, string sdt, string cccd, string tenPhong, string tenChucVu)
+        public static void UpdateNhanVien(int id, string ho, string ten, DateTime ngaySinh, bool gioiTinh, string email,string sdt, string cccd,   string tenPhong, string diachi, string tenChucVu)
         {
             try
             {

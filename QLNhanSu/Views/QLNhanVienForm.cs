@@ -117,7 +117,7 @@ namespace QLNhanSu.Views
         {
             if (selectedNhanVien != null)
             {
-                if (MessageBox.Show("Ban co thuc su muon xoa du lieu nay ko?", "Xac nhan xoa",
+                if (MessageBox.Show("Bạn có thực sự muốn xóa dữ liệu này không?", "Xác Nhận Xóa",
                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int id = selectedNhanVien.id;
