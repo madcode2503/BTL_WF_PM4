@@ -1,0 +1,53 @@
+
+-- Bảng NhanVien
+CREATE TABLE NhanVien (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Ho NVARCHAR(50) NOT NULL,
+    Ten NVARCHAR(50) NOT NULL,
+    SoDienThoai NVARCHAR(15) NOT NULL,
+    Email NVARCHAR(100),
+    DiaChi NVARCHAR(255),
+    NgaySinh DATE,
+    TenPhongBan NVARCHAR(100) NOT NULL, -- Lưu tên phòng ban trực tiếp
+    TenChucVu NVARCHAR(100) NOT NULL, -- Lưu tên chức vụ trực tiếp
+    CCCD NVARCHAR(12) UNIQUE NOT NULL,
+    GioiTinh BIT NOT NULL -- 0: nam, 1: nữ
+);
+
+-- Bảng PhongBan
+CREATE TABLE PhongBan (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    TenPhongBan NVARCHAR(100) NOT NULL,
+    MaPhongBan NVARCHAR(50) UNIQUE NOT NULL
+);
+
+-- Bảng ChucVu
+CREATE TABLE ChucVu (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    TenChucVu NVARCHAR(100) NOT NULL,
+    LuongCoBan DECIMAL(18,2) NOT NULL
+);
+
+-- Bảng ChamCong
+CREATE TABLE ChamCong (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Ngay date ,
+);
+
+-- Bảng Luong
+CREATE TABLE Luong (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    NhanVienID INT NOT NULL,
+    TenNhanVien NVARCHAR(100) NOT NULL,
+    ChucVu NVARCHAR(100) NOT NULL,
+    Luong DECIMAL(18,2) NOT NULL,
+    Thang INT NOT NULL CHECK (Thang BETWEEN 1 AND 12),
+    Nam INT NOT NULL
+);
+
+-- Bảng TaiKhoan
+CREATE TABLE TaiKhoan (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    TenTaiKhoan NVARCHAR(50) UNIQUE NOT NULL,
+    MatKhau NVARCHAR(255) NOT NULL
+);
