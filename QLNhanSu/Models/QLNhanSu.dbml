@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLNhanSu" Class="QLNhanSuDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-5S7618AC\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="QLNhanSu.Properties.Settings" SettingsPropertyName="QLNhanSuConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-5S7618AC\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="QLNhanSu.Properties.Settings" SettingsPropertyName="QLNhanSuConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_BangLuong" Member="tbl_BangLuongs">
     <Type Name="tbl_BangLuong">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ma_nhan_vien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="thang" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="luong_co_ban" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
@@ -11,7 +11,7 @@
   </Table>
   <Table Name="dbo.tbl_ChamCong" Member="tbl_ChamCongs">
     <Type Name="tbl_ChamCong">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ma_nhan_vien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="trang_thai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
@@ -20,14 +20,14 @@
   </Table>
   <Table Name="dbo.tbl_ChucVu" Member="tbl_ChucVus">
     <Type Name="tbl_ChucVu">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ten" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="luong_co_ban" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_DuAn" Member="tbl_DuAns">
     <Type Name="tbl_DuAn">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ten" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="ma" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="ngay_bat_dau" Type="System.DateTime" DbType="Date" CanBeNull="true" />
@@ -38,29 +38,29 @@
   </Table>
   <Table Name="dbo.tbl_NhanVien" Member="tbl_NhanViens">
     <Type Name="tbl_NhanVien">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ho" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="ten" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="so_dien_thoai" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="dia_chi" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="ngay_sinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ma_phong_ban" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ma_chuc_vu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ten_phong_ban" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ten_chuc_vu" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="cccd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="gioi_tinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_PhongBan" Member="tbl_PhongBans">
     <Type Name="tbl_PhongBan">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ten" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="ma" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_TaiKhoan" Member="tbl_TaiKhoans">
     <Type Name="tbl_TaiKhoan">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ten_dang_nhap" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="mat_khau" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="ma_nhan_vien" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -68,7 +68,7 @@
   </Table>
   <Table Name="dbo.tbl_ThamGiaDuAn" Member="tbl_ThamGiaDuAns">
     <Type Name="tbl_ThamGiaDuAn">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ma_du_an" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ma_nhan_vien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="vai_tro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />

@@ -32,7 +32,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.qLNhanSuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMenuItemHereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qLNhanVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.PanelNhanVien = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,14 +46,15 @@
             this.qLNhanSuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1203, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // qLNhanSuToolStripMenuItem
             // 
             this.qLNhanSuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addMenuItemHereToolStripMenuItem});
+            this.addMenuItemHereToolStripMenuItem,
+            this.qLNhanVienToolStripMenuItem});
             this.qLNhanSuToolStripMenuItem.Name = "qLNhanSuToolStripMenuItem";
             this.qLNhanSuToolStripMenuItem.Size = new System.Drawing.Size(112, 29);
             this.qLNhanSuToolStripMenuItem.Text = "QLNhanSu";
@@ -62,21 +65,38 @@
             this.addMenuItemHereToolStripMenuItem.Size = new System.Drawing.Size(277, 34);
             this.addMenuItemHereToolStripMenuItem.Text = "Add Menu item here";
             // 
+            // qLNhanVienToolStripMenuItem
+            // 
+            this.qLNhanVienToolStripMenuItem.Name = "qLNhanVienToolStripMenuItem";
+            this.qLNhanVienToolStripMenuItem.Size = new System.Drawing.Size(277, 34);
+            this.qLNhanVienToolStripMenuItem.Text = "QLNhanVien";
+            this.qLNhanVienToolStripMenuItem.Click += new System.EventHandler(this.qLNhanVienToolStripMenuItem_Click);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 37);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // PanelNhanVien
+            // 
+            this.PanelNhanVien.Location = new System.Drawing.Point(0, 36);
+            this.PanelNhanVien.Name = "PanelNhanVien";
+            this.PanelNhanVien.Size = new System.Drawing.Size(1203, 553);
+            this.PanelNhanVien.TabIndex = 1;
+            this.PanelNhanVien.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1203, 591);
+            this.Controls.Add(this.PanelNhanVien);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.Text = "FormMain";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -90,5 +110,7 @@
         private System.Windows.Forms.ToolStripMenuItem qLNhanSuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addMenuItemHereToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem qLNhanVienToolStripMenuItem;
+        private System.Windows.Forms.Panel PanelNhanVien;
     }
 }

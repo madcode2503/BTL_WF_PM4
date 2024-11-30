@@ -57,7 +57,7 @@ namespace QLNhanSu.Models
     #endregion
 		
 		public QLNhanSuDataContext() : 
-				base(global::QLNhanSu.Properties.Settings.Default.QLNhanSuConnectionString, mappingSource)
+				base(global::QLNhanSu.Properties.Settings.Default.QLNhanSuConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -188,7 +188,7 @@ namespace QLNhanSu.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int id
 		{
 			get
@@ -346,7 +346,7 @@ namespace QLNhanSu.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int id
 		{
 			get
@@ -496,7 +496,7 @@ namespace QLNhanSu.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int id
 		{
 			get
@@ -622,7 +622,7 @@ namespace QLNhanSu.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int id
 		{
 			get
@@ -803,9 +803,9 @@ namespace QLNhanSu.Models
 		
 		private System.Nullable<System.DateTime> _ngay_sinh;
 		
-		private System.Nullable<int> _ma_phong_ban;
+		private string _ten_phong_ban;
 		
-		private System.Nullable<int> _ma_chuc_vu;
+		private string _ten_chuc_vu;
 		
 		private string _cccd;
 		
@@ -829,10 +829,10 @@ namespace QLNhanSu.Models
     partial void Ondia_chiChanged();
     partial void Onngay_sinhChanging(System.Nullable<System.DateTime> value);
     partial void Onngay_sinhChanged();
-    partial void Onma_phong_banChanging(System.Nullable<int> value);
-    partial void Onma_phong_banChanged();
-    partial void Onma_chuc_vuChanging(System.Nullable<int> value);
-    partial void Onma_chuc_vuChanged();
+    partial void Onten_phong_banChanging(string value);
+    partial void Onten_phong_banChanged();
+    partial void Onten_chuc_vuChanging(string value);
+    partial void Onten_chuc_vuChanged();
     partial void OncccdChanging(string value);
     partial void OncccdChanged();
     partial void Ongioi_tinhChanging(System.Nullable<bool> value);
@@ -844,7 +844,7 @@ namespace QLNhanSu.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int id
 		{
 			get
@@ -984,42 +984,42 @@ namespace QLNhanSu.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_phong_ban", DbType="Int")]
-		public System.Nullable<int> ma_phong_ban
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten_phong_ban", DbType="VarChar(255)")]
+		public string ten_phong_ban
 		{
 			get
 			{
-				return this._ma_phong_ban;
+				return this._ten_phong_ban;
 			}
 			set
 			{
-				if ((this._ma_phong_ban != value))
+				if ((this._ten_phong_ban != value))
 				{
-					this.Onma_phong_banChanging(value);
+					this.Onten_phong_banChanging(value);
 					this.SendPropertyChanging();
-					this._ma_phong_ban = value;
-					this.SendPropertyChanged("ma_phong_ban");
-					this.Onma_phong_banChanged();
+					this._ten_phong_ban = value;
+					this.SendPropertyChanged("ten_phong_ban");
+					this.Onten_phong_banChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_chuc_vu", DbType="Int")]
-		public System.Nullable<int> ma_chuc_vu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten_chuc_vu", DbType="VarChar(255)")]
+		public string ten_chuc_vu
 		{
 			get
 			{
-				return this._ma_chuc_vu;
+				return this._ten_chuc_vu;
 			}
 			set
 			{
-				if ((this._ma_chuc_vu != value))
+				if ((this._ten_chuc_vu != value))
 				{
-					this.Onma_chuc_vuChanging(value);
+					this.Onten_chuc_vuChanging(value);
 					this.SendPropertyChanging();
-					this._ma_chuc_vu = value;
-					this.SendPropertyChanged("ma_chuc_vu");
-					this.Onma_chuc_vuChanged();
+					this._ten_chuc_vu = value;
+					this.SendPropertyChanged("ten_chuc_vu");
+					this.Onten_chuc_vuChanged();
 				}
 			}
 		}
@@ -1114,7 +1114,7 @@ namespace QLNhanSu.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int id
 		{
 			get
@@ -1228,7 +1228,7 @@ namespace QLNhanSu.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int id
 		{
 			get
@@ -1370,7 +1370,7 @@ namespace QLNhanSu.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int id
 		{
 			get
