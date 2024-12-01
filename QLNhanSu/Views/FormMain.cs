@@ -61,5 +61,11 @@ namespace QLNhanSu.Views
                 this.Close(); 
             }
         }
+        private void qLLươngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_QLLuong frm_QLLuong = new frm_QLLuong();
+
+            ShowFormInPanel(frm_QLLuong);
+        }
     }
 }

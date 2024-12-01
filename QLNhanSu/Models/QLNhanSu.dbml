@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLNhanSu" Class="QLNhanSuDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-5S7618AC\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="QLNhanSu.Properties.Settings" SettingsPropertyName="QLNhanSuConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-PA5RPVKD;Initial Catalog=QLNhanSu;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="QLNhanSu.Properties.Settings" SettingsPropertyName="QLNhanSuConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_BangLuong" Member="tbl_BangLuongs">
     <Type Name="tbl_BangLuong">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -13,9 +13,9 @@
     <Type Name="tbl_ChamCong">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ma_nhan_vien" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="trang_thai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ghi_chu" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ten_nhan_vien" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="so_ngay_nghi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thang_nam" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_ChucVu" Member="tbl_ChucVus">
@@ -63,7 +63,6 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ten_dang_nhap" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="mat_khau" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="ma_nhan_vien" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_ThamGiaDuAn" Member="tbl_ThamGiaDuAns">

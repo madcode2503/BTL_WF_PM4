@@ -33,6 +33,7 @@
             this.qLNhanSuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMenuItemHereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLNhanVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qLLươngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.PanelNhanVien = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -55,7 +56,8 @@
             // 
             this.qLNhanSuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addMenuItemHereToolStripMenuItem,
-            this.qLNhanVienToolStripMenuItem});
+            this.qLNhanVienToolStripMenuItem,
+            this.qLLươngToolStripMenuItem});
             this.qLNhanSuToolStripMenuItem.Name = "qLNhanSuToolStripMenuItem";
             this.qLNhanSuToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
             this.qLNhanSuToolStripMenuItem.Text = "QLNhanSu";
@@ -72,6 +74,13 @@
             this.qLNhanVienToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.qLNhanVienToolStripMenuItem.Text = "QLNhanVien";
             this.qLNhanVienToolStripMenuItem.Click += new System.EventHandler(this.qLNhanVienToolStripMenuItem_Click);
+            // 
+            // qLLươngToolStripMenuItem
+            // 
+            this.qLLươngToolStripMenuItem.Name = "qLLươngToolStripMenuItem";
+            this.qLLươngToolStripMenuItem.Size = new System.Drawing.Size(277, 34);
+            this.qLLươngToolStripMenuItem.Text = "QL Lương";
+            this.qLLươngToolStripMenuItem.Click += new System.EventHandler(this.qLLươngToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -127,5 +136,6 @@
         private System.Windows.Forms.ToolStripMenuItem qLNhanVienToolStripMenuItem;
         private System.Windows.Forms.Panel PanelNhanVien;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem qLLươngToolStripMenuItem;
     }
 }
