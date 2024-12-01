@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\PhongBanController.cs" />
+    <Compile Include="Models\EnumErrCode.cs" />
+    <Compile Include="Models\FunctionResult.cs" />
     <Compile Include="Models\QLNhanSu.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -60,6 +63,12 @@
     <Compile Include="Views\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Form_PhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Form_PhongBan.Designer.cs">
+      <DependentUpon>Form_PhongBan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,6 +81,10 @@
     <EmbeddedResource Include="Views\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Form_PhongBan.resx">
+      <DependentUpon>Form_PhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include=".gitignore" />
     <None Include="Models\QLNhanSu.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>QLNhanSu.designer.cs</LastGenOutput>
@@ -96,9 +109,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Imgs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
