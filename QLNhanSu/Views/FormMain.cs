@@ -47,5 +47,19 @@ namespace QLNhanSu.Views
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show(
+              "Bạn có chắc chắn muốn đăng xuất không?",
+              "Xác nhận",
+              MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); 
+            }
+        }
     }
 }
