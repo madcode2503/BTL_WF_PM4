@@ -12,13 +12,13 @@ namespace QLNhanSu.Controllers
     {
         QLNhanSuDataContext db = new QLNhanSuDataContext();
 
-        public FunctionResult<List<ChucVu>> GetAllChucVu()
+        public FunctionResult<List<tbl_ChucVu>> GetAllChucVu()
         {
-            var result = new FunctionResult<List<ChucVu>>();
+            var result = new FunctionResult<List<tbl_ChucVu>>();
 
             try
             {
-                var chucVus = db.ChucVus.ToList();
+                var chucVus = db.tbl_ChucVus.ToList();
 
                 if (chucVus.Any())
                 {
@@ -43,13 +43,14 @@ namespace QLNhanSu.Controllers
             return result;
         }
 
-        public FunctionResult<bool> AddChucVu(ChucVu newChucVu)
+        // Thêm chức vụ mới
+        public FunctionResult<bool> AddChucVu(tbl_ChucVu newChucVu)
         {
             var result = new FunctionResult<bool>();
 
             try
             {
-                var existingChucVu = db.ChucVus.SingleOrDefault(c => c.TenChucVu == newChucVu.TenChucVu);
+                var existingChucVu = db.tbl_ChucVus.SingleOrDefault(c => c.ten == newChucVu.ten);
                 if (existingChucVu != null)
                 {
                     result.ErrCode = EnumErrcode.Error;
@@ -58,7 +59,7 @@ namespace QLNhanSu.Controllers
                 }
                 else
                 {
-                    db.ChucVus.InsertOnSubmit(newChucVu);
+                    db.tbl_ChucVus.InsertOnSubmit(newChucVu);
                     db.SubmitChanges();
                     result.ErrCode = EnumErrcode.Success;
                     result.ErrDesc = "Thêm chức vụ thành công.";
@@ -75,17 +76,18 @@ namespace QLNhanSu.Controllers
             return result;
         }
 
-        public FunctionResult<bool> EditChucVu(ChucVu updatedChucVu)
+        // Sửa chức vụ
+        public FunctionResult<bool> EditChucVu(tbl_ChucVu updatedChucVu)
         {
             var result = new FunctionResult<bool>();
 
             try
             {
-                var chucVu = db.ChucVus.SingleOrDefault(c => c.ID == updatedChucVu.ID);
+                var chucVu = db.tbl_ChucVus.SingleOrDefault(c => c.id == updatedChucVu.id);
                 if (chucVu != null)
                 {
-                    chucVu.TenChucVu = updatedChucVu.TenChucVu;
-                    chucVu.LuongCoBan = updatedChucVu.LuongCoBan;
+                    chucVu.ten = updatedChucVu.ten;
+                    chucVu.luong_co_ban = updatedChucVu.luong_co_ban;
                     db.SubmitChanges();
                     result.ErrCode = EnumErrcode.Success;
                     result.ErrDesc = "Sửa chức vụ thành công.";
@@ -108,16 +110,17 @@ namespace QLNhanSu.Controllers
             return result;
         }
 
+        // Xóa chức vụ
         public FunctionResult<bool> DeleteChucVu(int id)
         {
             var result = new FunctionResult<bool>();
 
             try
             {
-                var chucVu = db.ChucVus.SingleOrDefault(c => c.ID == id);
+                var chucVu = db.tbl_ChucVus.SingleOrDefault(c => c.id == id);
                 if (chucVu != null)
                 {
-                    db.ChucVus.DeleteOnSubmit(chucVu);
+                    db.tbl_ChucVus.DeleteOnSubmit(chucVu);
                     db.SubmitChanges();
                     result.ErrCode = EnumErrcode.Success;
                     result.ErrDesc = "Xóa chức vụ thành công.";

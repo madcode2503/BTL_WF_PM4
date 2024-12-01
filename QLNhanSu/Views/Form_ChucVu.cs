@@ -35,8 +35,8 @@ namespace QLNhanSu.Views
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = dgvChucVu.Rows[e.RowIndex];
-                    txtTenChucVu.Text = row.Cells["TenChucVu"].Value.ToString();
-                    txtLuongCoBan.Text = row.Cells["LuongCoBan"].Value.ToString();
+                    txtTenChucVu.Text = row.Cells["ten"].Value.ToString();
+                    txtLuongCoBan.Text = row.Cells["luong_co_ban"].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -50,9 +50,13 @@ namespace QLNhanSu.Views
         {
             var result = chucVuController.GetAllChucVu();
             dgvChucVu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             if (result.ErrCode == EnumErrcode.Success)
             {
                 dgvChucVu.DataSource = result.Data;
+                dgvChucVu.Columns["id"].HeaderText = "ID";
+                dgvChucVu.Columns["ten"].HeaderText = "Tên chức vụ";
+                dgvChucVu.Columns["luong_co_ban"].HeaderText = "Lương cơ bản";
             }
             else
             {
@@ -92,10 +96,10 @@ namespace QLNhanSu.Views
                     return;
                 }
 
-                var newChucVu = new ChucVu
+                var newChucVu = new tbl_ChucVu
                 {
-                    TenChucVu = txtTenChucVu.Text,
-                    LuongCoBan = luongCoBan
+                    ten = txtTenChucVu.Text,
+                    luong_co_ban = luongCoBan
                 };
 
                 var result = chucVuController.AddChucVu(newChucVu);
@@ -132,18 +136,18 @@ namespace QLNhanSu.Views
                     return;
                 }
 
-                if (!int.TryParse(dgvChucVu.SelectedRows[0].Cells["ID"].Value.ToString(), out int id) ||
+                if (!int.TryParse(dgvChucVu.SelectedRows[0].Cells["id"].Value.ToString(), out int id) ||
                     !decimal.TryParse(txtLuongCoBan.Text, out decimal luongCoBan))
                 {
                     MessageBox.Show("Dữ liệu không hợp lệ.");
                     return;
                 }
 
-                var updatedChucVu = new ChucVu
+                var updatedChucVu = new tbl_ChucVu
                 {
-                    ID = id,
-                    TenChucVu = txtTenChucVu.Text,
-                    LuongCoBan = luongCoBan
+                    id = id,
+                    ten = txtTenChucVu.Text,
+                    luong_co_ban = luongCoBan
                 };
 
                 var result = chucVuController.EditChucVu(updatedChucVu);
@@ -171,7 +175,7 @@ namespace QLNhanSu.Views
                 if (dgvChucVu.SelectedRows.Count > 0)
                 {
                     int selectedRowIndex = dgvChucVu.SelectedRows[0].Index;
-                    int idToDelete = Convert.ToInt32(dgvChucVu.Rows[selectedRowIndex].Cells["ID"].Value);
+                    int idToDelete = Convert.ToInt32(dgvChucVu.Rows[selectedRowIndex].Cells["id"].Value);
 
                     DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa chức vụ này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
