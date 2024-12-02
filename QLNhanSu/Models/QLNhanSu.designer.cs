@@ -319,11 +319,11 @@ namespace QLNhanSu.Models
 		
 		private System.Nullable<int> _ma_nhan_vien;
 		
-		private System.Nullable<System.DateTime> _ngay;
+		private string _ten_nhan_vien;
 		
-		private string _trang_thai;
+		private System.Nullable<int> _so_ngay_nghi;
 		
-		private string _ghi_chu;
+		private System.Nullable<System.DateTime> _thang_nam;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -333,12 +333,12 @@ namespace QLNhanSu.Models
     partial void OnidChanged();
     partial void Onma_nhan_vienChanging(System.Nullable<int> value);
     partial void Onma_nhan_vienChanged();
-    partial void OnngayChanging(System.Nullable<System.DateTime> value);
-    partial void OnngayChanged();
-    partial void Ontrang_thaiChanging(string value);
-    partial void Ontrang_thaiChanged();
-    partial void Onghi_chuChanging(string value);
-    partial void Onghi_chuChanged();
+    partial void Onten_nhan_vienChanging(string value);
+    partial void Onten_nhan_vienChanged();
+    partial void Onso_ngay_nghiChanging(System.Nullable<int> value);
+    partial void Onso_ngay_nghiChanged();
+    partial void Onthang_namChanging(System.Nullable<System.DateTime> value);
+    partial void Onthang_namChanged();
     #endregion
 		
 		public tbl_ChamCong()
@@ -386,62 +386,62 @@ namespace QLNhanSu.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngay", DbType="Date")]
-		public System.Nullable<System.DateTime> ngay
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten_nhan_vien", DbType="VarChar(255)")]
+		public string ten_nhan_vien
 		{
 			get
 			{
-				return this._ngay;
+				return this._ten_nhan_vien;
 			}
 			set
 			{
-				if ((this._ngay != value))
+				if ((this._ten_nhan_vien != value))
 				{
-					this.OnngayChanging(value);
+					this.Onten_nhan_vienChanging(value);
 					this.SendPropertyChanging();
-					this._ngay = value;
-					this.SendPropertyChanged("ngay");
-					this.OnngayChanged();
+					this._ten_nhan_vien = value;
+					this.SendPropertyChanged("ten_nhan_vien");
+					this.Onten_nhan_vienChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trang_thai", DbType="VarChar(50)")]
-		public string trang_thai
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_so_ngay_nghi", DbType="Int")]
+		public System.Nullable<int> so_ngay_nghi
 		{
 			get
 			{
-				return this._trang_thai;
+				return this._so_ngay_nghi;
 			}
 			set
 			{
-				if ((this._trang_thai != value))
+				if ((this._so_ngay_nghi != value))
 				{
-					this.Ontrang_thaiChanging(value);
+					this.Onso_ngay_nghiChanging(value);
 					this.SendPropertyChanging();
-					this._trang_thai = value;
-					this.SendPropertyChanged("trang_thai");
-					this.Ontrang_thaiChanged();
+					this._so_ngay_nghi = value;
+					this.SendPropertyChanged("so_ngay_nghi");
+					this.Onso_ngay_nghiChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ghi_chu", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string ghi_chu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thang_nam", DbType="Date")]
+		public System.Nullable<System.DateTime> thang_nam
 		{
 			get
 			{
-				return this._ghi_chu;
+				return this._thang_nam;
 			}
 			set
 			{
-				if ((this._ghi_chu != value))
+				if ((this._thang_nam != value))
 				{
-					this.Onghi_chuChanging(value);
+					this.Onthang_namChanging(value);
 					this.SendPropertyChanging();
-					this._ghi_chu = value;
-					this.SendPropertyChanged("ghi_chu");
-					this.Onghi_chuChanged();
+					this._thang_nam = value;
+					this.SendPropertyChanged("thang_nam");
+					this.Onthang_namChanged();
 				}
 			}
 		}
@@ -1207,8 +1207,6 @@ namespace QLNhanSu.Models
 		
 		private string _mat_khau;
 		
-		private System.Nullable<int> _ma_nhan_vien;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1219,8 +1217,6 @@ namespace QLNhanSu.Models
     partial void Onten_dang_nhapChanged();
     partial void Onmat_khauChanging(string value);
     partial void Onmat_khauChanged();
-    partial void Onma_nhan_vienChanging(System.Nullable<int> value);
-    partial void Onma_nhan_vienChanged();
     #endregion
 		
 		public tbl_TaiKhoan()
@@ -1284,26 +1280,6 @@ namespace QLNhanSu.Models
 					this._mat_khau = value;
 					this.SendPropertyChanged("mat_khau");
 					this.Onmat_khauChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_nhan_vien", DbType="Int")]
-		public System.Nullable<int> ma_nhan_vien
-		{
-			get
-			{
-				return this._ma_nhan_vien;
-			}
-			set
-			{
-				if ((this._ma_nhan_vien != value))
-				{
-					this.Onma_nhan_vienChanging(value);
-					this.SendPropertyChanging();
-					this._ma_nhan_vien = value;
-					this.SendPropertyChanged("ma_nhan_vien");
-					this.Onma_nhan_vienChanged();
 				}
 			}
 		}

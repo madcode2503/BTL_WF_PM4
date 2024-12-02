@@ -13,9 +13,9 @@
     <Type Name="tbl_ChamCong">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ma_nhan_vien" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="trang_thai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ghi_chu" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ten_nhan_vien" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="so_ngay_nghi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thang_nam" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_ChucVu" Member="tbl_ChucVus">
@@ -63,7 +63,6 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ten_dang_nhap" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="mat_khau" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="ma_nhan_vien" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_ThamGiaDuAn" Member="tbl_ThamGiaDuAns">
