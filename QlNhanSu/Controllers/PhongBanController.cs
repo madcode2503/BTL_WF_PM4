@@ -9,12 +9,12 @@ namespace QlNhanSu.Controllers
     {
         private readonly QLNhanSuDataContext db = new QLNhanSuDataContext();
 
-        public FunctionResult<List<PhongBan>> GetAllPhongBan()
+        public FunctionResult<List<tbl_PhongBan>> GetAllPhongBan()
         {
             try
             {
-                var phongBans = db.PhongBans.ToList();
-                return new FunctionResult<List<PhongBan>>
+                var phongBans = db.tbl_PhongBans.ToList();
+                return new FunctionResult<List<tbl_PhongBan>>
                 {
                     ErrCode = phongBans.Any() ? EnumErrCode.Success : EnumErrCode.Empty,
                     ErrDesc = phongBans.Any() ? "Lấy danh sách phòng ban thành công." : "Không có dữ liệu phòng ban.",
@@ -23,7 +23,7 @@ namespace QlNhanSu.Controllers
             }
             catch (Exception ex)
             {
-                return new FunctionResult<List<PhongBan>>
+                return new FunctionResult<List<tbl_PhongBan>>
                 {
                     ErrCode = EnumErrCode.Error,
                     ErrDesc = $"Lỗi khi lấy dữ liệu: {ex.Message}",
@@ -32,11 +32,11 @@ namespace QlNhanSu.Controllers
             }
         }
 
-        public FunctionResult<bool> AddPhongBan(PhongBan newPhongBan)
+        public FunctionResult<bool> AddPhongBan(tbl_PhongBan newPhongBan)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(newPhongBan.MaPhongBan) || string.IsNullOrWhiteSpace(newPhongBan.TenPhongBan))
+                if (string.IsNullOrWhiteSpace(newPhongBan.ma) || string.IsNullOrWhiteSpace(newPhongBan.ten))
                 {
                     return new FunctionResult<bool>
                     {
@@ -46,7 +46,7 @@ namespace QlNhanSu.Controllers
                     };
                 }
 
-                if (db.PhongBans.Any(pb => pb.MaPhongBan == newPhongBan.MaPhongBan))
+                if (db.tbl_PhongBans.Any(pb => pb.ma == newPhongBan.ma))
                 {
                     return new FunctionResult<bool>
                     {
@@ -55,7 +55,7 @@ namespace QlNhanSu.Controllers
                         Data = false
                     };
                 }
-                if (db.PhongBans.Any(pb => pb.TenPhongBan == newPhongBan.TenPhongBan))
+                if (db.tbl_PhongBans.Any(pb => pb.ten == newPhongBan.ten))
                 {
                     return new FunctionResult<bool>
                     {
@@ -65,7 +65,7 @@ namespace QlNhanSu.Controllers
                     };
                 }
 
-                db.PhongBans.InsertOnSubmit(newPhongBan);
+                db.tbl_PhongBans.InsertOnSubmit(newPhongBan);
                 db.SubmitChanges();
 
 
@@ -87,11 +87,11 @@ namespace QlNhanSu.Controllers
             }
         }
 
-        public FunctionResult<bool> EditPhongBan(PhongBan updatedPhongBan)
+        public FunctionResult<bool> EditPhongBan(tbl_PhongBan updatedPhongBan)
         {
             try
             {
-                var phongBan = db.PhongBans.SingleOrDefault(pb => pb.Id == updatedPhongBan.Id);
+                var phongBan = db.tbl_PhongBans.SingleOrDefault(pb => pb.id == updatedPhongBan.id);
 
                 if (phongBan == null)
                 {
@@ -104,7 +104,7 @@ namespace QlNhanSu.Controllers
                 }
 
                 // Kiểm tra xem mã phòng ban mới có bị trùng với mã phòng ban khác không (ngoại trừ chính nó)
-                if (db.PhongBans.Any(pb => pb.MaPhongBan == updatedPhongBan.MaPhongBan && pb.Id != updatedPhongBan.Id))
+                if (db.tbl_PhongBans.Any(pb => pb.ma == updatedPhongBan.ma && pb.id != updatedPhongBan.id))
                 {
                     return new FunctionResult<bool>
                     {
@@ -115,7 +115,7 @@ namespace QlNhanSu.Controllers
                 }
 
                 // Kiểm tra xem tên phòng ban mới có bị trùng với tên phòng ban khác không (ngoại trừ chính nó)
-                if (db.PhongBans.Any(pb => pb.TenPhongBan == updatedPhongBan.TenPhongBan && pb.Id != updatedPhongBan.Id))
+                if (db.tbl_PhongBans.Any(pb => pb.ten == updatedPhongBan.ten && pb.id != updatedPhongBan.id))
                 {
                     return new FunctionResult<bool>
                     {
@@ -126,8 +126,8 @@ namespace QlNhanSu.Controllers
                 }
 
                 // Cập nhật thông tin phòng ban
-                phongBan.TenPhongBan = updatedPhongBan.TenPhongBan;
-                phongBan.MaPhongBan = updatedPhongBan.MaPhongBan;
+                phongBan.ten = updatedPhongBan.ten;
+                phongBan.ma = updatedPhongBan.ma;
                 db.SubmitChanges();
 
                 return new FunctionResult<bool>
@@ -152,7 +152,7 @@ namespace QlNhanSu.Controllers
         {
             try
             {
-                var phongBan = db.PhongBans.SingleOrDefault(pb => pb.Id == id);
+                var phongBan = db.tbl_PhongBans.SingleOrDefault(pb => pb.id == id);
 
                 if (phongBan == null)
                 {
@@ -164,7 +164,7 @@ namespace QlNhanSu.Controllers
                     };
                 }
 
-                db.PhongBans.DeleteOnSubmit(phongBan);
+                db.tbl_PhongBans.DeleteOnSubmit(phongBan);
                 db.SubmitChanges();
 
                 return new FunctionResult<bool>

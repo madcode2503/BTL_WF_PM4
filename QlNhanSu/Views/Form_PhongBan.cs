@@ -62,10 +62,10 @@ namespace QlNhanSu.Views
                     return;
                 }
 
-                var newPhongBan = new PhongBan
+                var newPhongBan = new tbl_PhongBan
                 {
-                    TenPhongBan = txt_tenphongban.Text,
-                    MaPhongBan = txt_maphongban.Text
+                    ten = txt_tenphongban.Text,
+                    ma = txt_maphongban.Text
                 };
 
                 var result = phongBanController.AddPhongBan(newPhongBan);
@@ -93,17 +93,17 @@ namespace QlNhanSu.Views
                     return;
                 }
 
-                if (!int.TryParse(DataGridViewPhongBan.SelectedRows[0].Cells["Id"].Value?.ToString(), out int id))
+                if (!int.TryParse(DataGridViewPhongBan.SelectedRows[0].Cells["id"].Value?.ToString(), out int id))
                 {
                     MessageBox.Show("Dữ liệu không hợp lệ.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                var updatedPhongBan = new PhongBan
+                var updatedPhongBan = new tbl_PhongBan
                 {
-                    Id = id,
-                    TenPhongBan = txt_tenphongban.Text,
-                    MaPhongBan = txt_maphongban.Text
+                    id = id,
+                    ten = txt_tenphongban.Text,
+                    ma = txt_maphongban.Text
                 };
 
                 var result = phongBanController.EditPhongBan(updatedPhongBan);
@@ -128,7 +128,7 @@ namespace QlNhanSu.Views
                 if (DataGridViewPhongBan.SelectedRows.Count > 0)
                 {
                     int selectedRowIndex = DataGridViewPhongBan.SelectedRows[0].Index;
-                    int idToDelete = Convert.ToInt32(DataGridViewPhongBan.Rows[selectedRowIndex].Cells["Id"].Value);
+                    int idToDelete = Convert.ToInt32(DataGridViewPhongBan.Rows[selectedRowIndex].Cells["id"].Value);
 
                     DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa phòng ban này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -164,8 +164,8 @@ namespace QlNhanSu.Views
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = DataGridViewPhongBan.Rows[e.RowIndex];
-                    txt_tenphongban.Text = row.Cells["TenPhongBan"].Value?.ToString();
-                    txt_maphongban.Text = row.Cells["MaPhongBan"].Value?.ToString();
+                    txt_tenphongban.Text = row.Cells["ten"].Value?.ToString();
+                    txt_maphongban.Text = row.Cells["ma"].Value?.ToString();
                 }
             }
             catch (Exception ex)
