@@ -84,7 +84,6 @@
     <EmbeddedResource Include="Views\Form_PhongBan.resx">
       <DependentUpon>Form_PhongBan.cs</DependentUpon>
     </EmbeddedResource>
-    <Content Include=".gitignore" />
     <None Include="Models\QLNhanSu.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>QLNhanSu.designer.cs</LastGenOutput>
