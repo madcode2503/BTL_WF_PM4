@@ -2,52 +2,52 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QLNhanSu">
   <DataContextMoniker Name="/QLNhanSuDataContext" />
   <nestedChildShapes>
-    <classShape Id="f5ecde49-db1a-424c-bc69-b6d37cc34c38" absoluteBounds="1.25, 0.875, 2, 1.7708968098958331">
+    <classShape Id="0404453b-fe8e-4cfc-9ecf-07e8ced09679" absoluteBounds="0.75, 0.75, 2, 1.7708968098958331">
       <DataClassMoniker Name="/QLNhanSuDataContext/tbl_BangLuong" />
       <nestedChildShapes>
-        <elementListCompartment Id="e0898b62-259a-4e73-98e9-bf4c0ca58d04" absoluteBounds="1.2650000000000001, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fb75bcdb-d134-4790-bd63-366f98963e64" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="db3e5f2a-a4dd-4a44-81dd-2a892967dee0" absoluteBounds="4.5, 1.25, 2, 1.7708968098958331">
+    <classShape Id="be4f07e2-6a16-4119-b8dc-3eda8d703185" absoluteBounds="3.75, 0.75, 2, 1.7708968098958331">
       <DataClassMoniker Name="/QLNhanSuDataContext/tbl_ChamCong" />
       <nestedChildShapes>
-        <elementListCompartment Id="93ba9751-f88a-4083-b637-992998385a64" absoluteBounds="4.515, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="051bf259-8ed4-4f47-82aa-c9a5b880fb3c" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a4cf2f2a-e3c0-4e72-b26b-d84ce23b23af" absoluteBounds="7.75, 1.375, 2, 1.3862939453125">
+    <classShape Id="98b84eed-15bf-4dba-ac98-9b6e28225279" absoluteBounds="0.75, 3.75, 2, 1.3862939453125005">
       <DataClassMoniker Name="/QLNhanSuDataContext/tbl_ChucVu" />
       <nestedChildShapes>
-        <elementListCompartment Id="47943b86-2989-479e-8fd8-a64068cd1c61" absoluteBounds="7.765, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="feb6381c-1016-43a2-b588-de5dacefe6cb" absoluteBounds="0.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4db14fb2-74bd-4262-8836-1226259924a5" absoluteBounds="2.875, 3.5, 2, 2.1554996744791666">
+    <classShape Id="376aa415-c305-473e-adce-6cee89d13bda" absoluteBounds="3.75, 3.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/QLNhanSuDataContext/tbl_DuAn" />
       <nestedChildShapes>
-        <elementListCompartment Id="99b0a322-8999-4336-9cee-28ced9a5b5f2" absoluteBounds="2.89, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e3c79c79-19c7-46de-98e4-fb33f3cd797e" absoluteBounds="3.765, 4.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a4d80805-4dda-41b7-a934-cca57b0cc64e" absoluteBounds="6, 3.75, 2, 2.9247054036458331">
+    <classShape Id="9664fa3d-b93f-453f-a333-c4c62ac2eff0" absoluteBounds="6.75, 0.75, 2, 2.9247054036458326">
       <DataClassMoniker Name="/QLNhanSuDataContext/tbl_NhanVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="6b36cab6-ebeb-462e-9f28-eda86a7a5455" absoluteBounds="6.015, 4.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4ab0b1e4-2bc3-4725-8e5f-3d4f782dc770" absoluteBounds="6.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8ac8b5e1-f317-4237-a83a-bc57cc63343e" absoluteBounds="1.5, 3.75, 2, 1.3862939453125">
+    <classShape Id="854ffc36-42a1-49a6-8f54-e76ed7559ddc" absoluteBounds="0.75, 6.75, 2, 1.3862939453125005">
       <DataClassMoniker Name="/QLNhanSuDataContext/tbl_PhongBan" />
       <nestedChildShapes>
-        <elementListCompartment Id="55846943-f6fe-411e-b58e-f83d668b7df2" absoluteBounds="1.5150000000000001, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="028e8385-0e76-42bf-bd6e-b004a572340e" absoluteBounds="0.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c2462476-ac42-4e30-a3c8-6c6b34e8f1e8" absoluteBounds="8.5, 4, 2, 1.3862939453125">
+    <classShape Id="5b1e7b7d-47b3-42ca-a105-5ffd30cd1b14" absoluteBounds="3.75, 6.75, 2, 1.3862939453125005">
       <DataClassMoniker Name="/QLNhanSuDataContext/tbl_TaiKhoan" />
       <nestedChildShapes>
-        <elementListCompartment Id="e9298eeb-a49e-4707-acc1-7b0f853b4f16" absoluteBounds="8.515, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="677ff28b-9e83-49fc-a4a7-9bb19147cbc6" absoluteBounds="3.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d7c4afff-972b-4eb7-992c-f03b80c78c87" absoluteBounds="3.5, 6.25, 2, 1.9631982421875">
+    <classShape Id="93918d4e-20ae-4155-b5b0-a2977db2e9c2" absoluteBounds="6.75, 4.75, 2, 1.9631982421875005">
       <DataClassMoniker Name="/QLNhanSuDataContext/tbl_ThamGiaDuAn" />
       <nestedChildShapes>
-        <elementListCompartment Id="a4511bd1-0309-4022-989f-03069d40d948" absoluteBounds="3.515, 6.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0c9b2baf-976c-49f0-b309-d2e54b1d7971" absoluteBounds="6.765, 5.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

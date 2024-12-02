@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLNhanSu" Class="QLNhanSuDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-PA5RPVKD;Initial Catalog=QLNhanSu;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="QLNhanSu.Properties.Settings" SettingsPropertyName="QLNhanSuConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-3BRPI3V\SQLEXPRESS02;Initial Catalog=QLNhanSu;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="QLNhanSu.Properties.Settings" SettingsPropertyName="QLNhanSuConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbl_BangLuong" Member="tbl_BangLuongs">
     <Type Name="tbl_BangLuong">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

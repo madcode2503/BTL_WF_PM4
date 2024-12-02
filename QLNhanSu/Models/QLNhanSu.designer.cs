@@ -57,7 +57,7 @@ namespace QLNhanSu.Models
     #endregion
 		
 		public QLNhanSuDataContext() : 
-				base(global::QLNhanSu.Properties.Settings.Default.QLNhanSuConnectionString2, mappingSource)
+				base(global::QLNhanSu.Properties.Settings.Default.QLNhanSuConnectionString3, mappingSource)
 		{
 			OnCreated();
 		}
