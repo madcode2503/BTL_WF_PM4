@@ -64,17 +64,45 @@ _ReSharper*/
 # Rider
 .idea/
 
-# JetBrains Rider related
-*.ipr
-*.iws
-.idea/
+# Visual Studio code coverage results
+*.coverage
+*.coveragexml
 
-# Database files
+# Node.js Tools for Visual Studio
+.ntvs_analysis.dat
+node_modules/
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# SQL Server files
 *.mdf
 *.ldf
+*.ndf
 
-# Other files to ignore
-*.cache
-*.pdb
-*.ilk
-*.lib
+# BizTalk build output
+*.btp.cs
+*.btm.cs
+*.odx.cs
+*.xsd.cs
+
+# Python Tools for Visual Studio (PTVS)
+__pycache__/
+*.pyc
+
+# MSBuild Binary and Structured Log
+*.binlog
+
+# Others
+ClientBin/
+~$*
+*~
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+orleans.codegen.cs

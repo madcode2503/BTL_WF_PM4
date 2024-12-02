@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.875" name="QLNhanSu">
+  <DataContextMoniker Name="/QLNhanSuDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b6a11a1f-e57f-4951-816b-91c4e8c4795d" absoluteBounds="0.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/QLNhanSuDataContext/tbl_BangLuong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94190021-aef2-4fab-a954-8e74e715004c" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94ef257e-2eda-48eb-9efd-96dfedb57a96" absoluteBounds="3.75, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/QLNhanSuDataContext/tbl_ThamGiaDuAn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b91c046-cb28-429e-b636-e016ea9c4312" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45c85201-501b-4b51-9709-1ae54a7e9610" absoluteBounds="0.75, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QLNhanSuDataContext/tbl_ChamCong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="682c9449-4006-4b67-a801-c34df9200ffd" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee22afc2-2e82-47fa-99fb-cb8914422e04" absoluteBounds="3.75, 3.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/QLNhanSuDataContext/tbl_ChucVu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87b96469-b94b-4023-9ce6-9488b421820f" absoluteBounds="3.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2531903-5da6-4f04-9e5e-9423411c8399" absoluteBounds="6.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/QLNhanSuDataContext/tbl_DuAn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f6cc22e-7b11-4244-ab85-7725874b9879" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f1c9ff0-4a66-491d-83e0-d6f99f357f44" absoluteBounds="0.75, 6.75, 2, 2.9247054036458318">
+      <DataClassMoniker Name="/QLNhanSuDataContext/tbl_NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2ab542c-0feb-407d-a71e-252a326aa6b0" absoluteBounds="0.765, 7.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a285f981-7b52-4cfd-afa5-aaa61796b217" absoluteBounds="6.75, 3.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/QLNhanSuDataContext/tbl_PhongBan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="483c8b04-9e9d-4871-a2ea-52ef7a044073" absoluteBounds="6.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3806cedd-d562-4d2b-b3da-2d916816b618" absoluteBounds="3.75, 6.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/QLNhanSuDataContext/tbl_TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="76143465-f4b4-46f7-9e5f-94cc546c1700" absoluteBounds="3.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
