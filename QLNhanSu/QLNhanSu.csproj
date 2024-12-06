@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ChucVuController.cs" />
     <Compile Include="Controllers\PhongBanController.cs" />
     <Compile Include="Controllers\QLLuong_ctrl.cs" />
     <Compile Include="Controllers\QLNhanVien.cs" />
@@ -117,6 +118,12 @@
     </Compile>
     <Compile Include="Views\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Form_ChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Form_ChucVu.Designer.cs">
+      <DependentUpon>Form_ChucVu.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Form_PhongBan.cs">
       <SubType>Form</SubType>
@@ -157,7 +164,10 @@
     <EmbeddedResource Include="Views\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-        <EmbeddedResource Include="Views\Form_PhongBan.resx">
+    <EmbeddedResource Include="Views\Form_ChucVu.resx">
+      <DependentUpon>Form_ChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Form_PhongBan.resx">
       <DependentUpon>Form_PhongBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frm_QLLuong.resx">
