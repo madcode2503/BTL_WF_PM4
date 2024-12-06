@@ -48,11 +48,22 @@ namespace QLNhanSu.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PA5RPVKD;Initial Catalog=QLNhanSu;Integrated Security=True;Enc" +
-            "rypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=THENGHIA\\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True" +
+            ";Encrypt=True;TrustServerCertificate=True")]
         public string QLNhanSuConnectionString2 {
             get {
                 return ((string)(this["QLNhanSuConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=THENGHIA\\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True" +
+            ";TrustServerCertificate=True")]
+        public string QLNhanSuConnectionString3 {
+            get {
+                return ((string)(this["QLNhanSuConnectionString3"]));
             }
         }
     }

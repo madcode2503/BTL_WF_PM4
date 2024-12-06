@@ -73,5 +73,11 @@ namespace QLNhanSu.Views
             Form_PhongBan form_PhongBan = new Form_PhongBan();
             ShowFormInPanel(form_PhongBan);
         }
+
+        private void qLNhanVienDuAnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNhanvienthamgia Frm_Nhanvienthamgia = new frmNhanvienthamgia();
+            ShowFormInPanel(Frm_Nhanvienthamgia);
+        }
     }
 }
