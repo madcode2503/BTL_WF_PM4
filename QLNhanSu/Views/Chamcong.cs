@@ -90,5 +90,12 @@ namespace QLNhanSu.Views
             dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            FormMain form = new FormMain();
+            form.Show();
+            this.Hide();
+        }
     }
 }

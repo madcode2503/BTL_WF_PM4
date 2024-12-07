@@ -48,21 +48,17 @@ namespace QLNhanSu.Views
         {
             if (isValid())
             {
-                // Lấy thông tin từ giao diện
                 string tenDangNhap = txt_UserName.Text.Trim();
                 string matKhau = txt_Password.Text.Trim();
 
-                // Khởi tạo controller để xử lý logic
                 DangNhap controller = new DangNhap();
                 var result = controller.dangnhap(tenDangNhap, matKhau);
 
-                // Xử lý kết quả trả về
                 if (result.ErrCode == EnumErrcode.Success)
                 {
                     MessageBox.Show(result.ErrDesc, "Thông báo");
-                    // Chuyển đến form chính
                     FormMain mainForm = new FormMain();
-                    this.Hide(); // Ẩn form đăng nhập
+                    this.Hide(); 
                     mainForm.Show();
                 }
                 else
@@ -70,6 +66,11 @@ namespace QLNhanSu.Views
                     MessageBox.Show(result.ErrDesc, "Thông báo");
                 }
             }
+        }
+
+        private void frm_DangNhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

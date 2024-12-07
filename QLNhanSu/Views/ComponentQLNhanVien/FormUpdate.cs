@@ -73,5 +73,15 @@ namespace QLNhanSu.Views.ComponentQLNhanVien
                 QLNhanVien.UpdateNhanVien(nhanVien.id, ho, ten, ngaysinh, gioiTinh, email, sodienthoai, cccd, tenPhong, diaChi, tenChucVu);
             }
         }
+
+        private void lable1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

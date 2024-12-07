@@ -33,6 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EPPlus, Version=7.5.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.7.5.1\lib\net462\EPPlus.dll</HintPath>
     </Reference>
@@ -86,6 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ChucVuController.cs" />
     <Compile Include="Controllers\QLChamCong.cs" />
     <Compile Include="Controllers\DangNhap.cs" />
     <Compile Include="Controllers\DuanController.cs" />
@@ -105,6 +113,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\ChamCong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +142,12 @@
     </Compile>
     <Compile Include="Views\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Form_ChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Form_ChucVu.Designer.cs">
+      <DependentUpon>Form_ChucVu.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Form_PhongBan.cs">
       <SubType>Form</SubType>
@@ -168,14 +187,9 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\ChamCong.resx">
       <DependentUpon>ChamCong.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Form_ChucVu.resx">
+      <DependentUpon>Form_ChucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Form_PhongBan.resx">
       <DependentUpon>Form_PhongBan.cs</DependentUpon>
@@ -233,6 +250,72 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-928418914-1024x1024.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sign-in-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-emergency-exit-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-update-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-update-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reload-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bonds-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-room-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-account-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-project-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-date-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-list-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

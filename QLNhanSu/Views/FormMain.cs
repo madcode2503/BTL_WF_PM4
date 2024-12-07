@@ -59,6 +59,8 @@ namespace QLNhanSu.Views
             if (result == DialogResult.Yes)
             {
                 this.Close(); 
+                frm_DangNhap form = new frm_DangNhap();
+                form.Show();
             }
         }
         private void qLLươngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,6 +80,23 @@ namespace QLNhanSu.Views
         {
             frmNhanvienthamgia Frm_Nhanvienthamgia = new frmNhanvienthamgia();
             ShowFormInPanel(Frm_Nhanvienthamgia);
+        }
+
+        private void chấmCôngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChamCong chamcong = new ChamCong();
+            ShowFormInPanel(chamcong);
+        }
+
+        private void qLChứcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void qLChứcVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_ChucVu form_ChucVu = new Form_ChucVu();
+            ShowFormInPanel(form_ChucVu);
         }
     }
 }
