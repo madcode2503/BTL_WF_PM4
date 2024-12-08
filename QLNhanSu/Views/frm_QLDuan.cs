@@ -1,4 +1,5 @@
 ﻿using QLNhanSu.Controllers;
+using QLNhanSu.Models;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -8,159 +9,161 @@ namespace QLNhanSu.Views
 {
     public partial class frm_QLDuan : Form
     {
-        private DuanController _duAnController;
+       private DuanController duanController = new DuanController();
+        private int selectedProjectId ; 
 
         public frm_QLDuan()
         {
             InitializeComponent();
-            _duAnController = new DuanController();
-            LoadDuAnData();
+       
         }
 
-        private void LoadDuAnData()
+        private void frm_QLDuan_Load(object sender, EventArgs e)
         {
-            List<DuAn> danhSachDuAn = _duAnController.GetAllDuAn();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = danhSachDuAn;
-
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-
-        private void BtnThem_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra dữ liệu nhập
-            if (string.IsNullOrEmpty(txtTen.Text) || string.IsNullOrEmpty(txtMa.Text))
+            Width = Parent.Width;
+            Height = Parent.Height;
+            // lay du lieu tu csdl va hien thi len datagridview
+            var projects = duanController.GetAllDuAn();
+            //switch tab tab - rs.err- enter
+            switch (projects.ErrCode)
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin dự án!");
+                case Models.EnumErrcode.Error:
+                    MessageBox.Show(projects.ErrDesc, "Thong bao loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case Models.EnumErrcode.Success:
+
+                    tbl_duan_gridview.DataSource = projects.Data;
+                    break;
+                case Models.EnumErrcode.Empty:
+                    MessageBox.Show(projects.ErrDesc, "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            string tenduan = txt_TenDuan.Text;
+            string maduan = txt_MaDuan.Text;
+            DateTime startDate = dtpNgayBatDau.Value;
+            DateTime endDate = dtpNgayKetThuc.Value;
+            string trangthai = comboBoxStatus.SelectedItem?.ToString() ?? "Đang hoạt động"; // Giá trị mặc định
+            string mota = txt_Mota.Text;
+            if (string.IsNullOrEmpty(tenduan) || string.IsNullOrEmpty(maduan) || string.IsNullOrEmpty(trangthai))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+            if (startDate >= endDate)
+            {
+                MessageBox.Show("Ngày bắt đầu phải trước  ngày kết thúc!");
+                return;
+            }
+            if (startDate < DateTime.Now)
+            {
+                MessageBox.Show("Ngày bắt đầu không được là ngày trong quá khứ!");
+                return;
+            }
+            if (duanController.CheckIfDuAnExists(maduan, tenduan))
+            {
+                MessageBox.Show("Mã dự án hoặc tên dự án đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            DuanController.AddDuAn(tenduan, maduan, startDate, endDate, trangthai, mota);
+            LoadData();
+                }
+
+        public void LoadData()
+        {
+            var projects = duanController.GetAllDuAn();
+            switch (projects.ErrCode)
+            {
+                case Models.EnumErrcode.Error:
+                    MessageBox.Show(projects.ErrDesc, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case Models.EnumErrcode.Success:
+                    tbl_duan_gridview.DataSource = null;
+                    tbl_duan_gridview.DataSource = projects.Data;
+                    break;
+                case Models.EnumErrcode.Empty:
+                    MessageBox.Show(projects.ErrDesc, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tbl_duan_gridview.DataSource = null;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedProjectId.ToString()))
+            {
+                MessageBox.Show("Vui lòng chọn một dự án để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            DuAn duAn = new DuAn
-            {
-                Ten = txtTen.Text,
-                Ma = txtMa.Text,
-                NgayBatDau = dtpNgayBatDau.Value,
-                NgayKetThuc = dtpNgayKetThuc.Value,
-                TrangThai = comboBoxStatus.SelectedItem?.ToString(),
-                MoTa = rtbMoTa.Text
-            };
+            string tenduan = txt_TenDuan.Text;
+            DateTime startDate = dtpNgayBatDau.Value;
+            DateTime endDate = dtpNgayKetThuc.Value;
+            string trangthai = comboBoxStatus.SelectedItem?.ToString();
+            string mota = txt_Mota.Text;
+            string maduan =txt_MaDuan.Text;
 
-            // Gọi phương thức thêm từ Controller
-            if (_duAnController.AddDuAn(duAn))
+            if (startDate >= endDate)
             {
-                MessageBox.Show("Thêm dự án thành công!");
-                LoadDuAnData(); // Tải lại dữ liệu
+                MessageBox.Show("Ngày bắt đầu phải trước ngày kết thúc!");
+                return;
             }
-            else
+            if (startDate < DateTime.Now)
             {
-                MessageBox.Show("Thêm dự án thất bại! Kiểm tra lại dữ liệu.");
+                MessageBox.Show("Ngày bắt đầu không được là ngày trong quá khứ!");
+                return;
             }
+
+            duanController.UpdateDuAn(selectedProjectId, tenduan, maduan, startDate, endDate, trangthai, mota);
+
+            LoadData();
+
         }
 
-
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (string.IsNullOrEmpty(selectedProjectId.ToString()))
             {
-                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
-                if (_duAnController.DeleteDuAn(id))
+                MessageBox.Show("Vui lòng chọn một dự án để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa dự án này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmResult == DialogResult.Yes)
+            {
+                var result = duanController.DeleteDuAn(selectedProjectId);
+                if (result.ErrCode == EnumErrcode.Success)
                 {
-                    MessageBox.Show("Xóa dự án thành công!");
-                    LoadDuAnData();
+                    MessageBox.Show(result.ErrDesc, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
                 }
                 else
                 {
-                    MessageBox.Show("Xóa dự án thất bại!");
+                    MessageBox.Show(result.ErrDesc, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+        }
+
+        private void tbl_duan_gridview_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra không click vào tiêu đề
             {
-                MessageBox.Show("Vui lòng chọn một dự án để xóa!");
+                var row = tbl_duan_gridview.Rows[e.RowIndex];
+                selectedProjectId =int.Parse( row.Cells["id"].Value.ToString());
+                txt_TenDuan.Text = row.Cells["ten"].Value?.ToString();
+                txt_MaDuan.Text = row.Cells["ma"].Value?.ToString();
+                dtpNgayBatDau.Value = Convert.ToDateTime(row.Cells["ngay_bat_dau"].Value);
+                dtpNgayKetThuc.Value = Convert.ToDateTime(row.Cells["ngay_ket_thuc"].Value);
+                comboBoxStatus.Text = row.Cells["trang_thai"].Value?.ToString();
+                txt_Mota.Text = row.Cells["mo_ta"].Value?.ToString();
             }
-        }
-
-        private void brnSua_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtID.Text)) // Kiểm tra nếu ID hợp lệ
-            {
-                DuAn duAn = new DuAn
-                {
-                    ID = int.Parse(txtID.Text),
-                    Ten = txtTen.Text,
-                    Ma = txtMa.Text,
-                    NgayBatDau = dtpNgayBatDau.Value,
-                    NgayKetThuc = dtpNgayKetThuc.Value,
-                    TrangThai = comboBoxStatus.SelectedItem?.ToString() ?? "Đang hoạt động", // Giá trị mặc định
-                    MoTa = rtbMoTa.Text
-                };
-
-                // Cập nhật dự án
-                if (_duAnController.UpdateDuAn(duAn))
-                {
-                    MessageBox.Show("Cập nhật dự án thành công!");
-                    LoadDuAnData(); // Tải lại dữ liệu
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật dự án thất bại!");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một dự án để sửa!");
-            }
-        }
-
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) // Đảm bảo rằng không nhấn vào tiêu đề cột
-            {
-                // Lấy hàng được chọn
-                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-
-                // Đổ dữ liệu từ hàng được chọn vào các trường nhập liệu
-                txtID.Text = selectedRow.Cells["ID"].Value?.ToString();
-                txtTen.Text = selectedRow.Cells["Ten"].Value?.ToString();
-                txtMa.Text = selectedRow.Cells["Ma"].Value?.ToString();
-                dtpNgayBatDau.Value = Convert.ToDateTime(selectedRow.Cells["NgayBatDau"].Value);
-                dtpNgayKetThuc.Value = Convert.ToDateTime(selectedRow.Cells["NgayKetThuc"].Value);
-                comboBoxStatus.SelectedItem = selectedRow.Cells["TrangThai"].Value?.ToString();
-                rtbMoTa.Text = selectedRow.Cells["MoTa"].Value?.ToString();
-            }
-        }
-
-        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) // Đảm bảo rằng không click vào tiêu đề cột
-            {
-                // Lấy hàng được chọn
-                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-
-                // Đổ dữ liệu từ hàng được chọn vào các trường nhập liệu
-                txtID.Text = selectedRow.Cells["ID"].Value?.ToString();
-                txtTen.Text = selectedRow.Cells["Ten"].Value?.ToString();
-                txtMa.Text = selectedRow.Cells["Ma"].Value?.ToString();
-                dtpNgayBatDau.Value = Convert.ToDateTime(selectedRow.Cells["NgayBatDau"].Value);
-                dtpNgayKetThuc.Value = Convert.ToDateTime(selectedRow.Cells["NgayKetThuc"].Value);
-                comboBoxStatus.SelectedItem = selectedRow.Cells["TrangThai"].Value?.ToString();
-                rtbMoTa.Text = selectedRow.Cells["MoTa"].Value?.ToString();
-            }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void rtbMoTa_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

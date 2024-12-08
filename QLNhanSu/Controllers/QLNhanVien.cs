@@ -13,7 +13,7 @@ namespace QLNhanSu.Controllers
     internal static class QLNhanVien
     {
 
-        public static QLNhanSuDataContext db = new QLNhanSuDataContext();
+private static QLNhanSuDataContext db = new QLNhanSuDataContext();
 
         public static FunctionResult<List<tbl_NhanVien>> getStaff()
         {

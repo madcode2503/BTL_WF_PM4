@@ -43,7 +43,7 @@ namespace QLNhanSu.Views
             try
             {
                 var duanController = new DuanController();
-                var listDuAn = duanController.GetAllDuAn();
+                var listDuAn = duanController.GetAllDuAn().Data;
 
                 if (listDuAn != null && listDuAn.Count > 0)
                 {
