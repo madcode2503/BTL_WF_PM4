@@ -59,11 +59,11 @@
             // 
             // txt_Search
             // 
-            this.txt_Search.Location = new System.Drawing.Point(498, 16);
+            this.txt_Search.Location = new System.Drawing.Point(582, 18);
             this.txt_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Search.Multiline = true;
             this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(304, 34);
+            this.txt_Search.Size = new System.Drawing.Size(304, 38);
             this.txt_Search.TabIndex = 5;
             this.txt_Search.TextChanged += new System.EventHandler(this.search_TextChanged);
             // 
@@ -71,7 +71,7 @@
             // 
             this.btn_Xoa.Image = global::QLNhanSu.Properties.Resources.icons8_delete_16;
             this.btn_Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Xoa.Location = new System.Drawing.Point(325, 14);
+            this.btn_Xoa.Location = new System.Drawing.Point(398, 18);
             this.btn_Xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(144, 38);
@@ -84,10 +84,10 @@
             // 
             this.btn_Sua.Image = global::QLNhanSu.Properties.Resources.icons8_edit_16;
             this.btn_Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Sua.Location = new System.Drawing.Point(162, 14);
+            this.btn_Sua.Location = new System.Drawing.Point(225, 18);
             this.btn_Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(133, 38);
+            this.btn_Sua.Size = new System.Drawing.Size(144, 38);
             this.btn_Sua.TabIndex = 2;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
@@ -97,10 +97,10 @@
             // 
             this.btn_Them.Image = global::QLNhanSu.Properties.Resources.icons8_add_16;
             this.btn_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Them.Location = new System.Drawing.Point(31, 12);
+            this.btn_Them.Location = new System.Drawing.Point(40, 18);
             this.btn_Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(114, 38);
+            this.btn_Them.Size = new System.Drawing.Size(144, 38);
             this.btn_Them.TabIndex = 1;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = true;
@@ -110,10 +110,10 @@
             // 
             this.btn_reloadTb.Image = global::QLNhanSu.Properties.Resources.icons8_reload_24;
             this.btn_reloadTb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_reloadTb.Location = new System.Drawing.Point(858, 18);
+            this.btn_reloadTb.Location = new System.Drawing.Point(926, 18);
             this.btn_reloadTb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_reloadTb.Name = "btn_reloadTb";
-            this.btn_reloadTb.Size = new System.Drawing.Size(135, 41);
+            this.btn_reloadTb.Size = new System.Drawing.Size(144, 38);
             this.btn_reloadTb.TabIndex = 22;
             this.btn_reloadTb.Text = "Tải lại";
             this.btn_reloadTb.UseVisualStyleBackColor = true;
