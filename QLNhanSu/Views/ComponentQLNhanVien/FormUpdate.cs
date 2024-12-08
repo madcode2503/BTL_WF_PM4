@@ -53,7 +53,7 @@ namespace QLNhanSu.Views.ComponentQLNhanVien
                 "Trà Vinh", "Tuyên Quang", "Vĩnh Long", "Vĩnh Phúc", "Yên Bái"
            };
             cb_Diachi.Items.AddRange(tinhThanh);
-            cb_Diachi.SelectedIndex = 0;
+            cb_Diachi.Text =nhanVien.dia_chi ;
         }
 
         private void btn_Sửa_Click(object sender, EventArgs e)
