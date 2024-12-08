@@ -110,6 +110,11 @@ namespace QLNhanSu.Views
             string mota = txt_Mota.Text;
             string maduan =txt_MaDuan.Text;
 
+            if (duanController.CheckIfDuAnExistsExcludeCurrent(maduan, tenduan, selectedProjectId))
+            {
+                MessageBox.Show("Mã dự án hoặc tên dự án đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (startDate >= endDate)
             {
                 MessageBox.Show("Ngày bắt đầu phải trước ngày kết thúc!");
