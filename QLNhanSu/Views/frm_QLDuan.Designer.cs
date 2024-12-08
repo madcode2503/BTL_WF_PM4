@@ -52,33 +52,30 @@ namespace QLNhanSu.Views
             // 
             // txt_TenDuan
             // 
-            this.txt_TenDuan.Location = new System.Drawing.Point(114, 23);
+            this.txt_TenDuan.Location = new System.Drawing.Point(114, 6);
             this.txt_TenDuan.Name = "txt_TenDuan";
             this.txt_TenDuan.Size = new System.Drawing.Size(164, 22);
-
-            this.txt_TenDuan.Size = new System.Drawing.Size(164, 26);
             this.txt_TenDuan.TabIndex = 0;
             // 
             // txt_MaDuan
             // 
-            this.txt_MaDuan.Location = new System.Drawing.Point(114, 63);
+            this.txt_MaDuan.Location = new System.Drawing.Point(114, 34);
             this.txt_MaDuan.Name = "txt_MaDuan";
             this.txt_MaDuan.Size = new System.Drawing.Size(164, 22);
-            this.txt_MaDuan.Size = new System.Drawing.Size(164, 26);
             this.txt_MaDuan.TabIndex = 1;
             // 
             // dtpNgayBatDau
             // 
-            this.dtpNgayBatDau.Location = new System.Drawing.Point(114, 109);
+            this.dtpNgayBatDau.Location = new System.Drawing.Point(114, 62);
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
-            this.dtpNgayBatDau.Size = new System.Drawing.Size(164, 26);
+            this.dtpNgayBatDau.Size = new System.Drawing.Size(164, 22);
             this.dtpNgayBatDau.TabIndex = 2;
             // 
             // dtpNgayKetThuc
             // 
-            this.dtpNgayKetThuc.Location = new System.Drawing.Point(114, 154);
+            this.dtpNgayKetThuc.Location = new System.Drawing.Point(114, 90);
             this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
-            this.dtpNgayKetThuc.Size = new System.Drawing.Size(164, 26);
+            this.dtpNgayKetThuc.Size = new System.Drawing.Size(164, 22);
             this.dtpNgayKetThuc.TabIndex = 3;
             // 
             // comboBoxStatus
@@ -87,14 +84,14 @@ namespace QLNhanSu.Views
             this.comboBoxStatus.Items.AddRange(new object[] {
             "Đang hoạt động",
             "Kết thúc"});
-            this.comboBoxStatus.Location = new System.Drawing.Point(114, 197);
+            this.comboBoxStatus.Location = new System.Drawing.Point(114, 118);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(164, 28);
+            this.comboBoxStatus.Size = new System.Drawing.Size(164, 24);
             this.comboBoxStatus.TabIndex = 4;
             // 
             // txt_Mota
             // 
-            this.txt_Mota.Location = new System.Drawing.Point(114, 227);
+            this.txt_Mota.Location = new System.Drawing.Point(114, 148);
             this.txt_Mota.Name = "txt_Mota";
             this.txt_Mota.Size = new System.Drawing.Size(164, 72);
             this.txt_Mota.TabIndex = 5;
@@ -106,63 +103,61 @@ namespace QLNhanSu.Views
             this.tbl_duan_gridview.Location = new System.Drawing.Point(311, 12);
             this.tbl_duan_gridview.Name = "tbl_duan_gridview";
             this.tbl_duan_gridview.RowHeadersWidth = 51;
-            this.tbl_duan_gridview.Size = new System.Drawing.Size(936, 370);
+            this.tbl_duan_gridview.Size = new System.Drawing.Size(435, 264);
             this.tbl_duan_gridview.TabIndex = 9;
             this.tbl_duan_gridview.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tbl_duan_gridview_RowHeaderMouseClick);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 66);
+            this.label2.Location = new System.Drawing.Point(12, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
-            this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "Mã Dự án";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 115);
+            this.label3.Location = new System.Drawing.Point(12, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 20);
+            this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "Ngày Bắt Đầu";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 159);
+            this.label4.Location = new System.Drawing.Point(12, 95);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 20);
+            this.label4.Size = new System.Drawing.Size(95, 16);
             this.label4.TabIndex = 14;
             this.label4.Text = "Ngày Kết Thúc";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 196);
+            this.label5.Location = new System.Drawing.Point(12, 126);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 20);
+            this.label5.Size = new System.Drawing.Size(73, 16);
             this.label5.TabIndex = 15;
             this.label5.Text = "Trạng Thái";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 230);
+            this.label6.Location = new System.Drawing.Point(12, 148);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 20);
+            this.label6.Size = new System.Drawing.Size(46, 16);
             this.label6.TabIndex = 16;
             this.label6.Text = "Mô Tả";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 23);
+            this.label7.Location = new System.Drawing.Point(12, 12);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 16);
-            this.label7.Size = new System.Drawing.Size(83, 20);
             this.label7.TabIndex = 17;
             this.label7.Text = "Tên Dự án";
             // 
@@ -170,7 +165,7 @@ namespace QLNhanSu.Views
             // 
             this.btn_Them.Image = global::QLNhanSu.Properties.Resources.icons8_add_16;
             this.btn_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Them.Location = new System.Drawing.Point(12, 323);
+            this.btn_Them.Location = new System.Drawing.Point(12, 253);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(90, 23);
             this.btn_Them.TabIndex = 6;
@@ -182,7 +177,7 @@ namespace QLNhanSu.Views
             // 
             this.btn_Xoa.Image = global::QLNhanSu.Properties.Resources.icons8_delete_16;
             this.btn_Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Xoa.Location = new System.Drawing.Point(213, 323);
+            this.btn_Xoa.Location = new System.Drawing.Point(199, 253);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(92, 23);
             this.btn_Xoa.TabIndex = 7;
@@ -194,7 +189,7 @@ namespace QLNhanSu.Views
             // 
             this.btn_Sua.Image = global::QLNhanSu.Properties.Resources.icons8_edit_16;
             this.btn_Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Sua.Location = new System.Drawing.Point(114, 323);
+            this.btn_Sua.Location = new System.Drawing.Point(108, 253);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(85, 23);
             this.btn_Sua.TabIndex = 8;
@@ -205,7 +200,7 @@ namespace QLNhanSu.Views
             // frm_QLDuan
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1283, 406);
+            this.ClientSize = new System.Drawing.Size(1051, 394);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -222,6 +217,8 @@ namespace QLNhanSu.Views
             this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.tbl_duan_gridview);
+            this.MaximumSize = new System.Drawing.Size(1069, 441);
+            this.MinimumSize = new System.Drawing.Size(1069, 441);
             this.Name = "frm_QLDuan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Dự Án";
