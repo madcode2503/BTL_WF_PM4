@@ -217,6 +217,9 @@
     <EmbeddedResource Include="Views\frm_QLDuan.resx">
       <DependentUpon>frm_QLDuan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frm_QLLuong.aa-DJ.resx">
+      <DependentUpon>frm_QLLuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frm_QLLuong.resx">
       <DependentUpon>frm_QLLuong.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,6 +319,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-list-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

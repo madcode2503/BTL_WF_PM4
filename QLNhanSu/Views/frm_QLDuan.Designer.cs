@@ -106,8 +106,9 @@ namespace QLNhanSu.Views
             this.dataGridView1.Location = new System.Drawing.Point(296, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(743, 304);
+            this.dataGridView1.Size = new System.Drawing.Size(452, 304);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // txtID
             // 
@@ -235,6 +236,7 @@ namespace QLNhanSu.Views
             this.Controls.Add(this.brnSua);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frm_QLDuan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Dự Án";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

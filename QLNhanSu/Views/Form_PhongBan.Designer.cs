@@ -43,7 +43,7 @@
             // 
             this.DataGridViewPhongBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewPhongBan.Location = new System.Drawing.Point(552, 42);
-            this.DataGridViewPhongBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGridViewPhongBan.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridViewPhongBan.Name = "DataGridViewPhongBan";
             this.DataGridViewPhongBan.RowHeadersWidth = 51;
             this.DataGridViewPhongBan.Size = new System.Drawing.Size(471, 316);
@@ -73,7 +73,7 @@
             // txt_tenphongban
             // 
             this.txt_tenphongban.Location = new System.Drawing.Point(226, 79);
-            this.txt_tenphongban.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_tenphongban.Margin = new System.Windows.Forms.Padding(4);
             this.txt_tenphongban.Name = "txt_tenphongban";
             this.txt_tenphongban.Size = new System.Drawing.Size(236, 22);
             this.txt_tenphongban.TabIndex = 2;
@@ -81,7 +81,7 @@
             // txt_maphongban
             // 
             this.txt_maphongban.Location = new System.Drawing.Point(226, 169);
-            this.txt_maphongban.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_maphongban.Margin = new System.Windows.Forms.Padding(4);
             this.txt_maphongban.Name = "txt_maphongban";
             this.txt_maphongban.Size = new System.Drawing.Size(236, 22);
             this.txt_maphongban.TabIndex = 2;
@@ -139,8 +139,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DataGridViewPhongBan);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_PhongBan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_PhongBan";
             this.Load += new System.EventHandler(this.Form_PhongBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPhongBan)).EndInit();
