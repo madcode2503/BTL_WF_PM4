@@ -140,6 +140,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DataGridViewPhongBan);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1069, 441);
+            this.MinimumSize = new System.Drawing.Size(1069, 441);
             this.Name = "Form_PhongBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_PhongBan";

@@ -301,6 +301,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lable1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(1069, 441);
+            this.MinimumSize = new System.Drawing.Size(1069, 441);
             this.Name = "FormUpdate";
             this.Text = "FormUpdate";
             this.Load += new System.EventHandler(this.FormUpdate_Load);

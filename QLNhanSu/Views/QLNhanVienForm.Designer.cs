@@ -47,13 +47,13 @@
             this.tbl_DuLieu_QLNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbl_DuLieu_QLNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbl_DuLieu_QLNhanVien.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tbl_DuLieu_QLNhanVien.Location = new System.Drawing.Point(-2, 64);
+            this.tbl_DuLieu_QLNhanVien.Location = new System.Drawing.Point(36, 53);
             this.tbl_DuLieu_QLNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbl_DuLieu_QLNhanVien.Name = "tbl_DuLieu_QLNhanVien";
             this.tbl_DuLieu_QLNhanVien.ReadOnly = true;
             this.tbl_DuLieu_QLNhanVien.RowHeadersWidth = 62;
             this.tbl_DuLieu_QLNhanVien.RowTemplate.Height = 28;
-            this.tbl_DuLieu_QLNhanVien.Size = new System.Drawing.Size(1047, 330);
+            this.tbl_DuLieu_QLNhanVien.Size = new System.Drawing.Size(982, 330);
             this.tbl_DuLieu_QLNhanVien.TabIndex = 0;
             this.tbl_DuLieu_QLNhanVien.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tbl_DuLieu_QLNhanVien_RowHeaderMouseClick);
             // 
@@ -131,6 +131,8 @@
             this.Controls.Add(this.btn_Them);
             this.Controls.Add(this.tbl_DuLieu_QLNhanVien);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(1069, 441);
+            this.MinimumSize = new System.Drawing.Size(1069, 441);
             this.Name = "QLNhanVienForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLNhanVienForm";

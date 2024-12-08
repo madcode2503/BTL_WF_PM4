@@ -130,21 +130,22 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(563, 34);
+            this.dataGridView1.Location = new System.Drawing.Point(551, 34);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(425, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(425, 162);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 278);
+            this.dataGridView2.Location = new System.Drawing.Point(12, 250);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(997, 165);
+            this.dataGridView2.Size = new System.Drawing.Size(1027, 165);
             this.dataGridView2.TabIndex = 15;
             // 
             // label6
@@ -159,7 +160,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(618, 250);
+            this.textBox4.Location = new System.Drawing.Point(601, 222);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(240, 22);
             this.textBox4.TabIndex = 19;
@@ -180,7 +181,7 @@
             // 
             this.button3.Image = global::QLNhanSu.Properties.Resources.icons8_search_16;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(878, 246);
+            this.button3.Location = new System.Drawing.Point(866, 214);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 30);
             this.button3.TabIndex = 20;
@@ -205,7 +206,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1000, 460);
+            this.ClientSize = new System.Drawing.Size(1051, 394);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox4);
@@ -222,9 +223,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(1069, 441);
+            this.MinimumSize = new System.Drawing.Size(1069, 441);
             this.Name = "ChamCong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChamCong";
+            this.Load += new System.EventHandler(this.ChamCong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);

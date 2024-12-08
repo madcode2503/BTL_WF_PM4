@@ -33,9 +33,6 @@ namespace QLNhanSu.Views
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.qLNhanSuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.PanelNhanVien = new System.Windows.Forms.Panel();
             this.qLNhanVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLLuongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLPhongBanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +40,9 @@ namespace QLNhanSu.Views
             this.chấmCôngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLChứcVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLDựÁnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.PanelNhanVien = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@ namespace QLNhanSu.Views
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1069, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1051, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,33 +72,6 @@ namespace QLNhanSu.Views
             this.qLNhanSuToolStripMenuItem.Name = "qLNhanSuToolStripMenuItem";
             this.qLNhanSuToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.qLNhanSuToolStripMenuItem.Text = "Ql Nhân Sự";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(918, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Đăng Xuất";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // PanelNhanVien
-            // 
-            this.PanelNhanVien.BackColor = System.Drawing.SystemColors.Control;
-            this.PanelNhanVien.BackgroundImage = global::QLNhanSu.Properties.Resources._9;
-            this.PanelNhanVien.Location = new System.Drawing.Point(0, 30);
-            this.PanelNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelNhanVien.Name = "PanelNhanVien";
-            this.PanelNhanVien.Size = new System.Drawing.Size(1069, 441);
-            this.PanelNhanVien.TabIndex = 1;
-            this.PanelNhanVien.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // qLNhanVienToolStripMenuItem
             // 
@@ -162,16 +135,45 @@ namespace QLNhanSu.Views
             this.qLDựÁnToolStripMenuItem.Text = "QL Dự Án";
             this.qLDựÁnToolStripMenuItem.Click += new System.EventHandler(this.qLDựÁnToolStripMenuItem_Click_1);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(918, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Đăng Xuất";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // PanelNhanVien
+            // 
+            this.PanelNhanVien.BackColor = System.Drawing.SystemColors.Control;
+            this.PanelNhanVien.BackgroundImage = global::QLNhanSu.Properties.Resources._9;
+            this.PanelNhanVien.Location = new System.Drawing.Point(0, 30);
+            this.PanelNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelNhanVien.Name = "PanelNhanVien";
+            this.PanelNhanVien.Size = new System.Drawing.Size(1069, 441);
+            this.PanelNhanVien.TabIndex = 1;
+            this.PanelNhanVien.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 473);
+            this.ClientSize = new System.Drawing.Size(1051, 394);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PanelNhanVien);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(1069, 441);
+            this.MinimumSize = new System.Drawing.Size(1069, 441);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMain";

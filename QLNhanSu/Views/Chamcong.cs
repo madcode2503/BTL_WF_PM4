@@ -97,5 +97,15 @@ namespace QLNhanSu.Views
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ChamCong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
