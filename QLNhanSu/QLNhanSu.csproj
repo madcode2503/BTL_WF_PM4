@@ -100,7 +100,7 @@
     <Compile Include="Controllers\PhongBanController.cs" />
     <Compile Include="Controllers\QLLuong_ctrl.cs" />
     <Compile Include="Controllers\QLNhanVien.cs" />
-    <Compile Include="Controllers\QLNhanvienduan.cs" />
+    <Compile Include="Controllers\NhanVienDuAnController.cs" />
     <Compile Include="Models\BangLuongDto.cs" />
     <Compile Include="Models\EnumErrcode.cs" />
     <Compile Include="Models\FunctionResult.cs" />

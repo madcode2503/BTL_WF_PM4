@@ -20,13 +20,23 @@ namespace QLNhanSu.Views
             InitializeComponent();
             LoadData();     // Tải dữ liệu cho DataGridView
             LoadMaDuAn();   // Tải danh sách Mã Dự Án vào ComboBox
+            LoadMaNhanVien();   // Tải danh sách Mã Nhân Viên vào ComboBox
         }
 
-        private QLNhanvienduan controller = new QLNhanvienduan();
+        private NhanVienDuAnController controller = new NhanVienDuAnController();
 
         private void LoadData()
         {
-            dataGridView1.DataSource = controller.GetAll();
+            //dataGridView1.DataSource = controller.GetAll();
+            var result = controller.GetAll();
+            if (result.ErrCode == EnumErrcode.Success)
+            {
+                dataGridView1.DataSource = result.Data;
+            }
+            else
+            {
+                MessageBox.Show(result.ErrDesc);
+            }
         }
         private void LoadMaDuAn()
         {
@@ -39,8 +49,8 @@ namespace QLNhanSu.Views
                 {
                     // Gắn dữ liệu vào ComboBox
                     cbbmaduan.DataSource = listDuAn;
-                    cbbmaduan.DisplayMember = "Ma";  // Hiển thị Mã Dự Án
-                    cbbmaduan.ValueMember = "ID";   // Gắn giá trị là ID
+                    cbbmaduan.DisplayMember = "ten";  // Hiển thị Mã Dự Án
+                    cbbmaduan.ValueMember = "id";   // Gắn giá trị là ID
                 }
                 else
                 {
@@ -50,6 +60,76 @@ namespace QLNhanSu.Views
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải danh sách Mã Dự Án: " + ex.Message);
+            }
+
+
+
+            //try
+            //{
+            //    var duanController = new DuanController();
+            //    var result = duanController.GetAllDuAn();
+            //    if (result.ErrCode == EnumErrcode.Success)
+            //    {
+            //        cbbmaduan.DataSource = result.Data;
+            //        cbbmaduan.DisplayMember = "ten";
+            //        cbbmaduan.ValueMember = "id";
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show(result.ErrDesc);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"Lỗi khi tải danh sách Mã Dự Án: {ex.Message}");
+            //}
+        }
+
+        private void LoadMaNhanVien()
+        {
+            //try
+            //{
+            //    var result = QLNhanVien.getStaff();
+            //    if (result.ErrCode == EnumErrcode.Success)
+            //    {
+            //        cbbmanhanvien.DataSource = result.Data;
+            //        cbbmanhanvien.DisplayMember = "ten";  // Hiển thị tên nhân viên
+            //        cbbmanhanvien.ValueMember = "id";        // Gắn giá trị là ID nhân viên
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show(result.ErrDesc);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"Lỗi khi tải danh sách Mã Nhân Viên: {ex.Message}");
+            //}
+
+            try
+            {
+                var result = QLNhanVien.getStaff();
+                if (result.ErrCode == EnumErrcode.Success)
+                {
+                    var dataWithFullName = result.Data.Cast<dynamic>() // Ép kiểu sang dynamic để xử lý các cột không cố định
+                                            .Select(x => new
+                                            {
+                                                x.id,            
+                                                ho_ten = $"{x.ho} {x.ten}"
+                                            }).ToList();
+
+                    cbbmanhanvien.DataSource = dataWithFullName;
+                    cbbmanhanvien.DisplayMember = "ho_ten"; 
+                    cbbmanhanvien.ValueMember = "id";     
+                }
+                else
+                {
+                    MessageBox.Show(result.ErrDesc);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải danh sách Mã Nhân Viên: {ex.Message}");
             }
         }
 
@@ -67,48 +147,99 @@ namespace QLNhanSu.Views
 
         private void btnxoa_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    int maDuAn = Convert.ToInt32(cbbmaduan.SelectedValue);
+            //    int maNhanVien = Convert.ToInt32(txtmanhanvien.Text);
+
+            //    controller.Delete(maDuAn, maNhanVien);
+            //    MessageBox.Show("Xóa thành công!");
+            //    LoadData();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Lỗi khi xóa nhân viên tham gia: " + ex.Message);
+            //}
+
             try
             {
                 int maDuAn = Convert.ToInt32(cbbmaduan.SelectedValue);
-                int maNhanVien = Convert.ToInt32(txtmanhanvien.Text);
+                int maNhanVien = Convert.ToInt32(cbbmanhanvien.SelectedValue);
 
-                controller.Delete(maDuAn, maNhanVien);
-                MessageBox.Show("Xóa thành công!");
-                LoadData();
+                var result = controller.Delete(maDuAn, maNhanVien);
+                MessageBox.Show(result.ErrDesc);
+                if (result.ErrCode == EnumErrcode.Success)
+                {
+                    LoadData();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi xóa nhân viên tham gia: " + ex.Message);
+                MessageBox.Show($"Lỗi khi xóa nhân viên tham gia: {ex.Message}");
             }
+
+      
         }
 
 
         private void btnsua_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    if (cbbmaduan.SelectedValue == null)
+            //    {
+            //        MessageBox.Show("Vui lòng chọn Mã Dự Án!");
+            //        return;
+            //    }
+
+            //    //var nv = new Nhanvienduan
+            //    //{
+
+            //    //    MaDuAn = Convert.ToInt32(cbbmaduan.SelectedValue),
+            //    //    MaNhanVien = Convert.ToInt32(txtmanhanvien.Text),
+            //    //    VaiTro = cbbvaitro.Text,
+            //    //    NgayThamGia = dtpngaybatdau.Value,
+            //    //    NgayKetThuc = dtpngayketthuc.Value
+            //    //};
+            //    var nv = new tbl_ThamGiaDuAn
+            //    {
+            //        ma_du_an = Convert.ToInt32(cbbmaduan.SelectedValue),
+            //        ma_nhan_vien = Convert.ToInt32(txtmanhanvien.Text),
+            //        vai_tro = cbbvaitro.Text,
+            //        ngay_tham_gia = dtpngaybatdau.Value,
+            //        ngay_roi_khoi = dtpngayketthuc.Value
+            //    };
+
+            //    controller.Edit(nv);
+            //    MessageBox.Show("Cập nhật thành công!");
+            //    LoadData();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Lỗi khi sửa nhân viên tham gia: " + ex.Message);
+            //}
+
             try
             {
-                if (cbbmaduan.SelectedValue == null)
+                var updatedRecord = new tbl_ThamGiaDuAn
                 {
-                    MessageBox.Show("Vui lòng chọn Mã Dự Án!");
-                    return;
-                }
-
-                var nv = new Nhanvienduan
-                {
-                
-                    MaDuAn = Convert.ToInt32(cbbmaduan.SelectedValue),
-                    MaNhanVien = Convert.ToInt32(txtmanhanvien.Text),
-                    VaiTro = cbbvaitro.Text,
-                    NgayThamGia = dtpngaybatdau.Value,
-                    NgayKetThuc = dtpngayketthuc.Value
+                    ma_du_an = Convert.ToInt32(cbbmaduan.SelectedValue),
+                    ma_nhan_vien = Convert.ToInt32(cbbmanhanvien.SelectedValue),
+                    vai_tro = cbbvaitro.Text,
+                    ngay_tham_gia = dtpngaybatdau.Value,
+                    ngay_roi_khoi = dtpngayketthuc.Value
                 };
-                controller.Update(nv);
-                MessageBox.Show("Cập nhật thành công!");
-                LoadData();
+
+                var result = controller.Edit(updatedRecord);
+                MessageBox.Show(result.ErrDesc);
+                if (result.ErrCode == EnumErrcode.Success)
+                {
+                    LoadData();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi sửa nhân viên tham gia: " + ex.Message);
+                MessageBox.Show($"Lỗi khi sửa nhân viên tham gia: {ex.Message}");
             }
         }
 
@@ -123,14 +254,23 @@ namespace QLNhanSu.Views
                     return;
                 }
 
-                var nv = new Nhanvienduan
+                //var nv = new Nhanvienduan
+                //{
+                //    MaDuAn = Convert.ToInt32(cbbmaduan.SelectedValue),
+                //    MaNhanVien = Convert.ToInt32(txtmanhanvien.Text),
+                //    VaiTro = cbbvaitro.Text,
+                //    NgayThamGia = dtpngaybatdau.Value,
+                //    NgayKetThuc = dtpngayketthuc.Value
+                //};
+                var nv = new tbl_ThamGiaDuAn
                 {
-                    MaDuAn = Convert.ToInt32(cbbmaduan.SelectedValue),
-                    MaNhanVien = Convert.ToInt32(txtmanhanvien.Text),
-                    VaiTro = cbbvaitro.Text,
-                    NgayThamGia = dtpngaybatdau.Value,
-                    NgayKetThuc = dtpngayketthuc.Value
+                    ma_du_an = Convert.ToInt32(cbbmaduan.SelectedValue),
+                    ma_nhan_vien = Convert.ToInt32(cbbmanhanvien.SelectedValue),
+                    vai_tro = cbbvaitro.Text,
+                    ngay_tham_gia = dtpngaybatdau.Value,
+                    ngay_roi_khoi = dtpngayketthuc.Value
                 };
+
                 controller.Add(nv);
                 MessageBox.Show("Thêm thành công!");
                 LoadData();
@@ -154,27 +294,36 @@ namespace QLNhanSu.Views
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //if (e.RowIndex >= 0)
+            //{
+            //    txtmanhanvien.Text = dataGridView1.Rows[e.RowIndex].Cells["ma_nhan_vien"].Value?.ToString() ?? string.Empty;
+
+            //    if (dataGridView1.Rows[e.RowIndex].Cells["ma_du_an"].Value != null)
+            //    {
+            //        cbbmaduan.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells["ma_du_an"].Value;
+            //    }
+
+            //    if (dataGridView1.Rows[e.RowIndex].Cells["vai_tro"].Value != null)
+            //    {
+            //        cbbvaitro.Text = dataGridView1.Rows[e.RowIndex].Cells["vai_tro"].Value.ToString();
+            //    }
+
+            //    dtpngaybatdau.Value = dataGridView1.Rows[e.RowIndex].Cells["ngay_tham_gia"].Value != null
+            //        ? Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["ngay_tham_gia"].Value)
+            //        : DateTime.Now;
+
+            //    dtpngayketthuc.Value = dataGridView1.Rows[e.RowIndex].Cells["ngay_ket_thuc"].Value != null
+            //        ? Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["ngay_ket_thuc"].Value)
+            //        : DateTime.Now;
+            //}
+
             if (e.RowIndex >= 0)
             {
-                txtmanhanvien.Text = dataGridView1.Rows[e.RowIndex].Cells["MaNhanVien"].Value?.ToString() ?? string.Empty;
-
-                if (dataGridView1.Rows[e.RowIndex].Cells["MaDuAn"].Value != null)
-                {
-                    cbbmaduan.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells["MaDuAn"].Value;
-                }
-
-                if (dataGridView1.Rows[e.RowIndex].Cells["VaiTro"].Value != null)
-                {
-                    cbbvaitro.Text = dataGridView1.Rows[e.RowIndex].Cells["VaiTro"].Value.ToString();
-                }
-
-                dtpngaybatdau.Value = dataGridView1.Rows[e.RowIndex].Cells["NgayThamGia"].Value != null
-                    ? Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["NgayThamGia"].Value)
-                    : DateTime.Now;
-
-                dtpngayketthuc.Value = dataGridView1.Rows[e.RowIndex].Cells["NgayKetThuc"].Value != null
-                    ? Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["NgayKetThuc"].Value)
-                    : DateTime.Now;
+                cbbmanhanvien.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells["ma_nhan_vien"].Value;
+                cbbmaduan.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells["ma_du_an"].Value;
+                cbbvaitro.Text = dataGridView1.Rows[e.RowIndex].Cells["vai_tro"].Value?.ToString() ?? string.Empty;
+                dtpngaybatdau.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["ngay_tham_gia"].Value ?? DateTime.Now);
+                dtpngayketthuc.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["ngay_roi_khoi"].Value ?? DateTime.Now);
             }
         }
 

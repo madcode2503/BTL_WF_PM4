@@ -199,5 +199,22 @@ namespace QLNhanSu.Views
         {
 
         }
+
+        private void dgvChucVu_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = dgvChucVu.Rows[e.RowIndex];
+                    txtTenChucVu.Text = row.Cells["ten"].Value.ToString();
+                    txtLuongCoBan.Text = row.Cells["luong_co_ban"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+            }
+        }
     }
 }
