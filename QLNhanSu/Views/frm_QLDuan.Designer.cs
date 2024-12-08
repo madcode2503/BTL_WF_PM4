@@ -54,30 +54,30 @@ namespace QLNhanSu.Views
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(144, 48);
+            this.txtTen.Location = new System.Drawing.Point(114, 48);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(225, 22);
+            this.txtTen.Size = new System.Drawing.Size(164, 22);
             this.txtTen.TabIndex = 0;
             // 
             // txtMa
             // 
-            this.txtMa.Location = new System.Drawing.Point(144, 82);
+            this.txtMa.Location = new System.Drawing.Point(114, 82);
             this.txtMa.Name = "txtMa";
-            this.txtMa.Size = new System.Drawing.Size(225, 22);
+            this.txtMa.Size = new System.Drawing.Size(164, 22);
             this.txtMa.TabIndex = 1;
             // 
             // dtpNgayBatDau
             // 
-            this.dtpNgayBatDau.Location = new System.Drawing.Point(144, 127);
+            this.dtpNgayBatDau.Location = new System.Drawing.Point(114, 115);
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
-            this.dtpNgayBatDau.Size = new System.Drawing.Size(225, 22);
+            this.dtpNgayBatDau.Size = new System.Drawing.Size(164, 22);
             this.dtpNgayBatDau.TabIndex = 2;
             // 
             // dtpNgayKetThuc
             // 
-            this.dtpNgayKetThuc.Location = new System.Drawing.Point(144, 172);
+            this.dtpNgayKetThuc.Location = new System.Drawing.Point(114, 153);
             this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
-            this.dtpNgayKetThuc.Size = new System.Drawing.Size(225, 22);
+            this.dtpNgayKetThuc.Size = new System.Drawing.Size(164, 22);
             this.dtpNgayKetThuc.TabIndex = 3;
             // 
             // comboBoxStatus
@@ -86,39 +86,40 @@ namespace QLNhanSu.Views
             this.comboBoxStatus.Items.AddRange(new object[] {
             "Đang hoạt động",
             "Kết thúc"});
-            this.comboBoxStatus.Location = new System.Drawing.Point(144, 214);
+            this.comboBoxStatus.Location = new System.Drawing.Point(114, 185);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(225, 24);
+            this.comboBoxStatus.Size = new System.Drawing.Size(164, 24);
             this.comboBoxStatus.TabIndex = 4;
             // 
             // rtbMoTa
             // 
-            this.rtbMoTa.Location = new System.Drawing.Point(144, 255);
+            this.rtbMoTa.Location = new System.Drawing.Point(114, 227);
             this.rtbMoTa.Name = "rtbMoTa";
-            this.rtbMoTa.Size = new System.Drawing.Size(225, 72);
+            this.rtbMoTa.Size = new System.Drawing.Size(164, 72);
             this.rtbMoTa.TabIndex = 5;
             this.rtbMoTa.Text = "";
+            this.rtbMoTa.TextChanged += new System.EventHandler(this.rtbMoTa_TextChanged);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(399, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(296, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(640, 320);
+            this.dataGridView1.Size = new System.Drawing.Size(743, 304);
             this.dataGridView1.TabIndex = 9;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(144, 12);
+            this.txtID.Location = new System.Drawing.Point(114, 12);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(225, 22);
+            this.txtID.Size = new System.Drawing.Size(164, 22);
             this.txtID.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 18);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 16);
             this.label1.TabIndex = 11;
@@ -127,7 +128,7 @@ namespace QLNhanSu.Views
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 88);
+            this.label2.Location = new System.Drawing.Point(12, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 16);
             this.label2.TabIndex = 12;
@@ -136,7 +137,7 @@ namespace QLNhanSu.Views
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 133);
+            this.label3.Location = new System.Drawing.Point(12, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 13;
@@ -145,7 +146,7 @@ namespace QLNhanSu.Views
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 172);
+            this.label4.Location = new System.Drawing.Point(12, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 16);
             this.label4.TabIndex = 14;
@@ -154,7 +155,7 @@ namespace QLNhanSu.Views
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 222);
+            this.label5.Location = new System.Drawing.Point(12, 193);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 16);
             this.label5.TabIndex = 15;
@@ -163,7 +164,7 @@ namespace QLNhanSu.Views
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 258);
+            this.label6.Location = new System.Drawing.Point(12, 227);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 16);
             this.label6.TabIndex = 16;
@@ -172,7 +173,7 @@ namespace QLNhanSu.Views
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 54);
+            this.label7.Location = new System.Drawing.Point(12, 54);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 16);
             this.label7.TabIndex = 17;
@@ -182,9 +183,9 @@ namespace QLNhanSu.Views
             // 
             this.btnThem.Image = global::QLNhanSu.Properties.Resources.icons8_add_16;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(12, 344);
+            this.btnThem.Location = new System.Drawing.Point(12, 323);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(109, 23);
+            this.btnThem.Size = new System.Drawing.Size(90, 23);
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -193,7 +194,7 @@ namespace QLNhanSu.Views
             // 
             this.btnXoa.Image = global::QLNhanSu.Properties.Resources.icons8_delete_16;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(277, 344);
+            this.btnXoa.Location = new System.Drawing.Point(213, 323);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(92, 23);
             this.btnXoa.TabIndex = 7;
@@ -204,9 +205,9 @@ namespace QLNhanSu.Views
             // 
             this.brnSua.Image = global::QLNhanSu.Properties.Resources.icons8_edit_16;
             this.brnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.brnSua.Location = new System.Drawing.Point(144, 344);
+            this.brnSua.Location = new System.Drawing.Point(114, 323);
             this.brnSua.Name = "brnSua";
-            this.brnSua.Size = new System.Drawing.Size(111, 23);
+            this.brnSua.Size = new System.Drawing.Size(85, 23);
             this.brnSua.TabIndex = 8;
             this.brnSua.Text = "Sửa";
             this.brnSua.UseVisualStyleBackColor = true;

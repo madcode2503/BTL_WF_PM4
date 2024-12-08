@@ -31,10 +31,8 @@ namespace QLNhanSu.Views
         // Sự kiện click vào menu QLNhanVien
         private void qLNhanVienToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Tạo instance của form QLNhanVien
             QLNhanVienForm qLNhanVienForm = new QLNhanVienForm();
 
-            // Hiển thị form con trong panel1
             ShowFormInPanel(qLNhanVienForm);
         }
 
@@ -97,6 +95,12 @@ namespace QLNhanSu.Views
         {
             Form_ChucVu form_ChucVu = new Form_ChucVu();
             ShowFormInPanel(form_ChucVu);
+        }
+
+        private void qLDựÁnToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frm_QLDuan frm_dlduan = new frm_QLDuan();
+            ShowFormInPanel(frm_dlduan);
         }
     }
 }

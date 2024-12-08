@@ -63,8 +63,8 @@
             // splitContainerChucVu.Panel2
             // 
             this.splitContainerChucVu.Panel2.Controls.Add(this.pnlData);
-            this.splitContainerChucVu.Size = new System.Drawing.Size(1067, 554);
-            this.splitContainerChucVu.SplitterDistance = 354;
+            this.splitContainerChucVu.Size = new System.Drawing.Size(1110, 371);
+            this.splitContainerChucVu.SplitterDistance = 368;
             this.splitContainerChucVu.SplitterWidth = 5;
             this.splitContainerChucVu.TabIndex = 0;
             // 
@@ -83,16 +83,16 @@
             this.pnlCRUD.Location = new System.Drawing.Point(0, 0);
             this.pnlCRUD.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCRUD.Name = "pnlCRUD";
-            this.pnlCRUD.Size = new System.Drawing.Size(354, 554);
+            this.pnlCRUD.Size = new System.Drawing.Size(368, 371);
             this.pnlCRUD.TabIndex = 0;
             this.pnlCRUD.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCRUD_Paint);
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDelete.Image = global::QLNhanSu.Properties.Resources.icons8_delete_16;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(242, 441);
+            this.btnDelete.Location = new System.Drawing.Point(252, 284);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 28);
@@ -103,10 +103,10 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEdit.Image = global::QLNhanSu.Properties.Resources.icons8_edit_16;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(130, 441);
+            this.btnEdit.Location = new System.Drawing.Point(139, 284);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(84, 28);
@@ -117,10 +117,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd.Image = global::QLNhanSu.Properties.Resources.icons8_add_16;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(13, 441);
+            this.btnAdd.Location = new System.Drawing.Point(18, 284);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(95, 28);
@@ -136,7 +136,7 @@
             this.txtLuongCoBan.Location = new System.Drawing.Point(153, 185);
             this.txtLuongCoBan.Margin = new System.Windows.Forms.Padding(13, 6, 13, 12);
             this.txtLuongCoBan.Name = "txtLuongCoBan";
-            this.txtLuongCoBan.Size = new System.Drawing.Size(163, 22);
+            this.txtLuongCoBan.Size = new System.Drawing.Size(177, 22);
             this.txtLuongCoBan.TabIndex = 4;
             // 
             // txtTenChucVu
@@ -146,26 +146,24 @@
             this.txtTenChucVu.Location = new System.Drawing.Point(153, 141);
             this.txtTenChucVu.Margin = new System.Windows.Forms.Padding(13, 6, 13, 12);
             this.txtTenChucVu.Name = "txtTenChucVu";
-            this.txtTenChucVu.Size = new System.Drawing.Size(163, 22);
+            this.txtTenChucVu.Size = new System.Drawing.Size(177, 22);
             this.txtTenChucVu.TabIndex = 3;
             // 
             // lbl_LuongCoBan
             // 
-            this.lbl_LuongCoBan.AutoSize = true;
-            this.lbl_LuongCoBan.Location = new System.Drawing.Point(44, 185);
+            this.lbl_LuongCoBan.Location = new System.Drawing.Point(22, 185);
             this.lbl_LuongCoBan.Margin = new System.Windows.Forms.Padding(13, 6, 13, 6);
             this.lbl_LuongCoBan.Name = "lbl_LuongCoBan";
-            this.lbl_LuongCoBan.Size = new System.Drawing.Size(91, 16);
+            this.lbl_LuongCoBan.Size = new System.Drawing.Size(105, 16);
             this.lbl_LuongCoBan.TabIndex = 2;
             this.lbl_LuongCoBan.Text = "Lương Cơ Bản";
             // 
             // lbl_TenChucVu
             // 
-            this.lbl_TenChucVu.AutoSize = true;
-            this.lbl_TenChucVu.Location = new System.Drawing.Point(44, 144);
+            this.lbl_TenChucVu.Location = new System.Drawing.Point(22, 147);
             this.lbl_TenChucVu.Margin = new System.Windows.Forms.Padding(13, 12, 13, 6);
             this.lbl_TenChucVu.Name = "lbl_TenChucVu";
-            this.lbl_TenChucVu.Size = new System.Drawing.Size(83, 16);
+            this.lbl_TenChucVu.Size = new System.Drawing.Size(105, 16);
             this.lbl_TenChucVu.TabIndex = 1;
             this.lbl_TenChucVu.Text = "Tên Chức Vụ";
             // 
@@ -174,7 +172,7 @@
             this.lbl_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_Title.AutoSize = true;
             this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(61, 43);
+            this.lbl_Title.Location = new System.Drawing.Point(68, 43);
             this.lbl_Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(211, 29);
@@ -188,7 +186,7 @@
             this.pnlData.Location = new System.Drawing.Point(0, 0);
             this.pnlData.Margin = new System.Windows.Forms.Padding(4);
             this.pnlData.Name = "pnlData";
-            this.pnlData.Size = new System.Drawing.Size(708, 554);
+            this.pnlData.Size = new System.Drawing.Size(737, 371);
             this.pnlData.TabIndex = 0;
             // 
             // dgvChucVu
@@ -199,18 +197,19 @@
             this.dgvChucVu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvChucVu.Name = "dgvChucVu";
             this.dgvChucVu.RowHeadersWidth = 51;
-            this.dgvChucVu.Size = new System.Drawing.Size(708, 554);
+            this.dgvChucVu.Size = new System.Drawing.Size(737, 371);
             this.dgvChucVu.TabIndex = 0;
             // 
             // Form_ChucVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1110, 371);
             this.Controls.Add(this.splitContainerChucVu);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_ChucVu";
             this.Text = "Form_ChucVu";
+            this.Load += new System.EventHandler(this.Form_ChucVu_Load);
             this.splitContainerChucVu.Panel1.ResumeLayout(false);
             this.splitContainerChucVu.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerChucVu)).EndInit();

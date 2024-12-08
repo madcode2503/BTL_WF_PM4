@@ -152,5 +152,10 @@ namespace QLNhanSu.Views
         {
 
         }
+
+        private void rtbMoTa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

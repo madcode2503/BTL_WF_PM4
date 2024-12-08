@@ -36,13 +36,13 @@ namespace QLNhanSu.Views
             this.qLNhanVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLLuongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLPhongBanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.qLDựÁnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLNhanVienDuAnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chấmCôngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qLChứcVụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.PanelNhanVien = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.qLDựÁnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,10 +65,10 @@ namespace QLNhanSu.Views
             this.qLNhanVienToolStripMenuItem,
             this.qLLuongToolStripMenuItem,
             this.qLPhongBanToolStripMenuItem,
-            this.qLDựÁnToolStripMenuItem,
             this.qLNhanVienDuAnToolStripMenuItem,
             this.chấmCôngToolStripMenuItem,
-            this.qLChứcVụToolStripMenuItem});
+            this.qLChứcVụToolStripMenuItem,
+            this.qLDựÁnToolStripMenuItem});
             this.qLNhanSuToolStripMenuItem.Name = "qLNhanSuToolStripMenuItem";
             this.qLNhanSuToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
             this.qLNhanSuToolStripMenuItem.Text = "QLNhanSu";
@@ -99,15 +99,6 @@ namespace QLNhanSu.Views
             this.qLPhongBanToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
             this.qLPhongBanToolStripMenuItem.Text = "QL Phòng ban";
             this.qLPhongBanToolStripMenuItem.Click += new System.EventHandler(this.qLPhòngBanToolStripMenuItem_Click);
-            // 
-            // qLDựÁnToolStripMenuItem
-            // 
-            this.qLDựÁnToolStripMenuItem.Image = global::QLNhanSu.Properties.Resources.icons8_project_24;
-            this.qLDựÁnToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.qLDựÁnToolStripMenuItem.Name = "qLDựÁnToolStripMenuItem";
-            this.qLDựÁnToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
-            this.qLDựÁnToolStripMenuItem.Text = "QL Dự Án";
-            this.qLDựÁnToolStripMenuItem.Click += new System.EventHandler(this.qLDựÁnToolStripMenuItem_Click);
             // 
             // qLNhanVienDuAnToolStripMenuItem
             // 
@@ -161,6 +152,15 @@ namespace QLNhanSu.Views
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // qLDựÁnToolStripMenuItem
+            // 
+            this.qLDựÁnToolStripMenuItem.Image = global::QLNhanSu.Properties.Resources.icons8_project_24;
+            this.qLDựÁnToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.qLDựÁnToolStripMenuItem.Name = "qLDựÁnToolStripMenuItem";
+            this.qLDựÁnToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
+            this.qLDựÁnToolStripMenuItem.Text = "QL Dự Án";
+            this.qLDựÁnToolStripMenuItem.Click += new System.EventHandler(this.qLDựÁnToolStripMenuItem_Click_1);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -197,9 +197,9 @@ namespace QLNhanSu.Views
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem qLLuongToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qLPhongBanToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem qLDựÁnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qLNhanVienDuAnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chấmCôngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qLChứcVụToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem qLDựÁnToolStripMenuItem;
     }
 }

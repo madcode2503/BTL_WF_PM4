@@ -194,5 +194,10 @@ namespace QLNhanSu.Views
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Form_ChucVu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
