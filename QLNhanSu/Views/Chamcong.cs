@@ -69,12 +69,7 @@ namespace QLNhanSu.Views
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
         }
-        private void button2_Click(object sender, EventArgs e) // Trang chủ
-        {
-            this.Hide();
-            FormMain form = new FormMain();
-            form.Show();
-        }
+        
 
         private void button4_Click(object sender, EventArgs e) // Tải lại
         {
