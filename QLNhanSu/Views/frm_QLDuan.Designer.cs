@@ -55,6 +55,8 @@ namespace QLNhanSu.Views
             this.txt_TenDuan.Location = new System.Drawing.Point(114, 23);
             this.txt_TenDuan.Name = "txt_TenDuan";
             this.txt_TenDuan.Size = new System.Drawing.Size(164, 22);
+
+            this.txt_TenDuan.Size = new System.Drawing.Size(164, 26);
             this.txt_TenDuan.TabIndex = 0;
             // 
             // txt_MaDuan
@@ -62,20 +64,21 @@ namespace QLNhanSu.Views
             this.txt_MaDuan.Location = new System.Drawing.Point(114, 63);
             this.txt_MaDuan.Name = "txt_MaDuan";
             this.txt_MaDuan.Size = new System.Drawing.Size(164, 22);
+            this.txt_MaDuan.Size = new System.Drawing.Size(164, 26);
             this.txt_MaDuan.TabIndex = 1;
             // 
             // dtpNgayBatDau
             // 
             this.dtpNgayBatDau.Location = new System.Drawing.Point(114, 109);
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
-            this.dtpNgayBatDau.Size = new System.Drawing.Size(164, 22);
+            this.dtpNgayBatDau.Size = new System.Drawing.Size(164, 26);
             this.dtpNgayBatDau.TabIndex = 2;
             // 
             // dtpNgayKetThuc
             // 
             this.dtpNgayKetThuc.Location = new System.Drawing.Point(114, 154);
             this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
-            this.dtpNgayKetThuc.Size = new System.Drawing.Size(164, 22);
+            this.dtpNgayKetThuc.Size = new System.Drawing.Size(164, 26);
             this.dtpNgayKetThuc.TabIndex = 3;
             // 
             // comboBoxStatus
@@ -86,7 +89,7 @@ namespace QLNhanSu.Views
             "Kết thúc"});
             this.comboBoxStatus.Location = new System.Drawing.Point(114, 197);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(164, 24);
+            this.comboBoxStatus.Size = new System.Drawing.Size(164, 28);
             this.comboBoxStatus.TabIndex = 4;
             // 
             // txt_Mota
@@ -113,6 +116,7 @@ namespace QLNhanSu.Views
             this.label2.Location = new System.Drawing.Point(12, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
+            this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "Mã Dự án";
             // 
@@ -121,7 +125,7 @@ namespace QLNhanSu.Views
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 16);
+            this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 13;
             this.label3.Text = "Ngày Bắt Đầu";
             // 
@@ -130,7 +134,7 @@ namespace QLNhanSu.Views
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(8, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 16);
+            this.label4.Size = new System.Drawing.Size(112, 20);
             this.label4.TabIndex = 14;
             this.label4.Text = "Ngày Kết Thúc";
             // 
@@ -139,7 +143,7 @@ namespace QLNhanSu.Views
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(9, 196);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 16);
+            this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 15;
             this.label5.Text = "Trạng Thái";
             // 
@@ -148,7 +152,7 @@ namespace QLNhanSu.Views
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(12, 230);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 16);
+            this.label6.Size = new System.Drawing.Size(53, 20);
             this.label6.TabIndex = 16;
             this.label6.Text = "Mô Tả";
             // 
@@ -158,6 +162,7 @@ namespace QLNhanSu.Views
             this.label7.Location = new System.Drawing.Point(12, 23);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 16);
+            this.label7.Size = new System.Drawing.Size(83, 20);
             this.label7.TabIndex = 17;
             this.label7.Text = "Tên Dự án";
             // 

@@ -120,6 +120,21 @@ namespace QLNhanSu.Views
                 MessageBox.Show("Ngày bắt đầu không được là ngày trong quá khứ!");
                 return;
             }
+            if (duanController.CheckIfDuAnExistsExcludeCurrent(maduan, tenduan, selectedProjectId))
+            {
+                MessageBox.Show("Mã dự án hoặc tên dự án đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (startDate >= endDate)
+            {
+                MessageBox.Show("Ngày bắt đầu phải trước ngày kết thúc!");
+                return;
+            }
+            if (startDate < DateTime.Now)
+            {
+                MessageBox.Show("Ngày bắt đầu không được là ngày trong quá khứ!");
+                return;
+            }
 
             duanController.UpdateDuAn(selectedProjectId, tenduan, maduan, startDate, endDate, trangthai, mota);
 
