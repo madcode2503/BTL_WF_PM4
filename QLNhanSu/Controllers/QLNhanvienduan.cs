@@ -7,7 +7,7 @@ namespace QLNhanSu.Controllers
 {
     internal class QLNhanvienduan
     {
-        private readonly string connectionString = "Server=LEDUCHAI;Database=QLNhanSu;Trusted_Connection=True;";
+        private readonly string connectionString = "Data Source=LAPTOP-5S7618AC\\SQLEXPRESS;Trusted_Connection=True;";
 
         // Lấy tất cả dữ liệu
         public List<Nhanvienduan> GetAll()

@@ -8,7 +8,7 @@ namespace QLNhanSu.Controllers
 {
     internal class DuanController
     {
-        private readonly string connectionString = @"Data Source=THENGHIA\SQLEXPRESS;Initial Catalog=QLNhansu;Integrated Security=True;";
+        private readonly string connectionString = @"Data Source=LAPTOP-5S7618AC\SQLEXPRESS;Initial Catalog=QLNhansu;Integrated Security=True;";
 
         // Lấy danh sách dự án
         public List<DuAn> GetAllDuAn()
