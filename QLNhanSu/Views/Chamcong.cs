@@ -1,4 +1,5 @@
-﻿using QLNhanSu.Controllers;
+﻿
+using QLNhanSu.Controllers;
 using QLNhanSu.Models;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,17 @@ namespace QLNhanSu.Views
             InitializeComponent();
             load_data();
         }
-
+        static bool IsNumber(string s)
+        {
+            foreach (char c in s)
+            {
+                if (!char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -28,7 +39,8 @@ namespace QLNhanSu.Views
             int so_buoi_nghi;
             DateTime ngay_cham_cong = DateTime.Parse(dateTimePicker1.Text);
 
-            if (textBox2.Text != "")
+
+            if (textBox2.Text != "" && IsNumber(textBox2.Text))
             {
                 so_buoi_nghi = Convert.ToInt32(textBox2.Text);
             }
@@ -36,15 +48,25 @@ namespace QLNhanSu.Views
             {
                 so_buoi_nghi = 0;
             }
-            if (textBox1.Text == "" || textBox3.Text=="")
+            if (textBox1.Text == "" || textBox3.Text == "")
             {
                 MessageBox.Show("Vui lòng điền đủ thông tin");
                 return;
             }
-            if (textBox1.Text != "" && textBox3.Text!="")
+            if (IsNumber(textBox2.Text) == false || IsNumber(textBox3.Text) == false)
+            {
+                MessageBox.Show("Dữ liệu phải là số nguyên");
+                return;
+            }
+            if (IsNumber(textBox1.Text))
+            {
+                MessageBox.Show("Tên nhân viên không thể là số nguyên");
+                return;
+            }
+            if (textBox1.Text != "" && textBox3.Text != "" && IsNumber(textBox1.Text) == false)
             {
                 ten = textBox1.Text;
-                manv=Convert.ToInt32(textBox3.Text);
+                manv = Convert.ToInt32(textBox3.Text);
                 QLChamCong.ThemNhanVien(manv, ten, so_buoi_nghi, ngay_cham_cong);
                 MessageBox.Show("Cập nhật thành công!");
                 textBox1.Text = "";
@@ -55,7 +77,7 @@ namespace QLNhanSu.Views
 
         public void load_data()
         {
-           
+
             var st = from s in db.tbl_ChamCongs select s;
             dataGridView2.DataSource = st;
             dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -69,7 +91,7 @@ namespace QLNhanSu.Views
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
         }
-        
+
 
         private void button4_Click(object sender, EventArgs e) // Tải lại
         {
@@ -78,7 +100,7 @@ namespace QLNhanSu.Views
 
         private void button3_Click(object sender, EventArgs e) // Tìm kiếm
         {
-            int timkiem=Convert.ToInt32( textBox4.Text);
+            int timkiem = Convert.ToInt32(textBox4.Text);
             var st = db.tbl_ChamCongs.Where(z => z.ma_nhan_vien == timkiem);
             dataGridView2.DataSource = st;
             dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -91,21 +113,6 @@ namespace QLNhanSu.Views
             FormMain form = new FormMain();
             form.Show();
             this.Hide();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void ChamCong_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
