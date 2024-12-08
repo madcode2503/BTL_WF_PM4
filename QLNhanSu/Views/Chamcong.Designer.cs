@@ -133,17 +133,17 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(425, 245);
+            this.dataGridView1.Size = new System.Drawing.Size(425, 200);
             this.dataGridView1.TabIndex = 14;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(2, 419);
+            this.dataGridView2.Location = new System.Drawing.Point(2, 373);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(998, 283);
+            this.dataGridView2.Size = new System.Drawing.Size(997, 165);
             this.dataGridView2.TabIndex = 15;
             // 
             // label6
@@ -158,7 +158,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(618, 370);
+            this.textBox4.Location = new System.Drawing.Point(618, 345);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(240, 22);
             this.textBox4.TabIndex = 19;
@@ -167,7 +167,7 @@
             // 
             this.button4.Image = global::QLNhanSu.Properties.Resources.icons8_reload_24;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(342, 334);
+            this.button4.Location = new System.Drawing.Point(342, 323);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 33);
             this.button4.TabIndex = 21;
@@ -179,7 +179,7 @@
             // 
             this.button3.Image = global::QLNhanSu.Properties.Resources.icons8_search_16;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(878, 366);
+            this.button3.Location = new System.Drawing.Point(878, 341);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 30);
             this.button3.TabIndex = 20;
@@ -191,7 +191,7 @@
             // 
             this.button1.Image = global::QLNhanSu.Properties.Resources.icons8_update_25;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(91, 334);
+            this.button1.Location = new System.Drawing.Point(92, 323);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 33);
             this.button1.TabIndex = 16;

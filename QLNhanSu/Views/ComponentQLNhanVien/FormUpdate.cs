@@ -63,7 +63,7 @@ namespace QLNhanSu.Views.ComponentQLNhanVien
                 bool gioiTinh = cb_Gioitinh.SelectedItem != null && cb_Gioitinh.SelectedItem.ToString() == "Nam";
                 string tenPhong = cb_Tenphong.SelectedItem.ToString();
                 string tenChucVu = cb_Tenchucvu.SelectedItem.ToString();
-                string diaChi = cb_Diachi.SelectedItem.ToString(); // Địa chỉ (tỉnh thành)
+                string diaChi = cb_Diachi.SelectedItem == null? nhanVien.dia_chi: cb_Diachi.SelectedItem.ToString(); // Địa chỉ (tỉnh thành)
                 string email = text_Email.Text;
                 string ho = txt_Ho.Text;
                 string ten = txt_Ten.Text;
