@@ -36,28 +36,87 @@ namespace QLNhanSu.Controllers
         {
             try
             {
-                if (newRecord.ma_du_an <= 0 || newRecord.ma_nhan_vien <= 0)
+                // Kiểm tra dữ liệu đầu vào
+                if (newRecord == null)
                 {
                     return new FunctionResult<bool>
                     {
                         ErrCode = EnumErrcode.Error,
-                        ErrDesc = "Mã dự án và mã nhân viên không được để trống hoặc âm.",
+                        ErrDesc = "Dữ liệu không hợp lệ.",
                         Data = false
                     };
                 }
 
+                if (newRecord.ma_du_an <= 0)
+                {
+                    return new FunctionResult<bool>
+                    {
+                        ErrCode = EnumErrcode.Error,
+                        ErrDesc = "Mã dự án không được để trống hoặc âm.",
+                        Data = false
+                    };
+                }
+
+                if (newRecord.ma_nhan_vien <= 0)
+                {
+                    return new FunctionResult<bool>
+                    {
+                        ErrCode = EnumErrcode.Error,
+                        ErrDesc = "Mã nhân viên không được để trống hoặc âm.",
+                        Data = false
+                    };
+                }
+
+                // Kiểm tra dự án
+                var duAn = db.tbl_DuAns.SingleOrDefault(t => t.id == newRecord.ma_du_an);
+                if (duAn == null)
+                {
+                    return new FunctionResult<bool>
+                    {
+                        ErrCode = EnumErrcode.Error,
+                        ErrDesc = "Dự án không tồn tại.",
+                        Data = false
+                    };
+                }
+
+                if (duAn.ngay_ket_thuc != null && duAn.ngay_ket_thuc <= DateTime.Now)
+                {
+                    return new FunctionResult<bool>
+                    {
+                        ErrCode = EnumErrcode.Error,
+                        ErrDesc = "Dự án đã kết thúc và không thể thêm nhân viên.",
+                        Data = false
+                    };
+                }
+
+                // Kiểm tra trùng lặp bản ghi
+                var existingRecord = db.tbl_ThamGiaDuAns
+                    .SingleOrDefault(t => t.ma_du_an == newRecord.ma_du_an && t.ma_nhan_vien == newRecord.ma_nhan_vien);
+
+                if (existingRecord != null)
+                {
+                    return new FunctionResult<bool>
+                    {
+                        ErrCode = EnumErrcode.Error,
+                        ErrDesc = "Nhân viên đã tham gia dự án này. Không thể thêm trùng lặp.",
+                        Data = false
+                    };
+                }
+
+                // Thêm thông tin tham gia dự án
                 db.tbl_ThamGiaDuAns.InsertOnSubmit(newRecord);
                 db.SubmitChanges();
 
                 return new FunctionResult<bool>
                 {
                     ErrCode = EnumErrcode.Success,
-                    ErrDesc = "Thêm thông tin nhân viên dự án thành công.",
+                    ErrDesc = "Thêm thông tin nhân viên vào dự án thành công.",
                     Data = true
                 };
             }
             catch (Exception ex)
             {
+                // Xử lý lỗi
                 return new FunctionResult<bool>
                 {
                     ErrCode = EnumErrcode.Error,
@@ -71,7 +130,20 @@ namespace QLNhanSu.Controllers
         {
             try
             {
-                var record = db.tbl_ThamGiaDuAns.SingleOrDefault(t => t.ma_du_an == updatedRecord.ma_du_an && t.ma_nhan_vien == updatedRecord.ma_nhan_vien);
+                // Kiểm tra đầu vào
+                if (updatedRecord == null)
+                {
+                    return new FunctionResult<bool>
+                    {
+                        ErrCode = EnumErrcode.Error,
+                        ErrDesc = "Dữ liệu không hợp lệ.",
+                        Data = false
+                    };
+                }
+
+                // Tìm bản ghi cần cập nhật
+                var record = db.tbl_ThamGiaDuAns
+                    .SingleOrDefault(t => t.ma_du_an == updatedRecord.ma_du_an && t.ma_nhan_vien == updatedRecord.ma_nhan_vien);
 
                 if (record == null)
                 {
@@ -83,13 +155,23 @@ namespace QLNhanSu.Controllers
                     };
                 }
 
+                // Kiểm tra ngày rời khỏi (nếu có) phải sau ngày tham gia
+                if (updatedRecord.ngay_roi_khoi != null && updatedRecord.ngay_roi_khoi < updatedRecord.ngay_tham_gia)
+                {
+                    return new FunctionResult<bool>
+                    {
+                        ErrCode = EnumErrcode.Error,
+                        ErrDesc = "Ngày rời khỏi không thể trước ngày tham gia.",
+                        Data = false
+                    };
+                }
+
                 // Cập nhật thông tin
-                record.ma_nhan_vien = updatedRecord.ma_du_an;
-                record.ma_nhan_vien = updatedRecord.ma_nhan_vien;
                 record.vai_tro = updatedRecord.vai_tro;
                 record.ngay_tham_gia = updatedRecord.ngay_tham_gia;
                 record.ngay_roi_khoi = updatedRecord.ngay_roi_khoi;
 
+                // Lưu thay đổi
                 db.SubmitChanges();
 
                 return new FunctionResult<bool>
@@ -101,6 +183,7 @@ namespace QLNhanSu.Controllers
             }
             catch (Exception ex)
             {
+                // Xử lý ngoại lệ và trả về lỗi
                 return new FunctionResult<bool>
                 {
                     ErrCode = EnumErrcode.Error,
@@ -109,6 +192,7 @@ namespace QLNhanSu.Controllers
                 };
             }
         }
+
 
         public FunctionResult<bool> Delete(int maDuAn, int maNhanVien)
         {
