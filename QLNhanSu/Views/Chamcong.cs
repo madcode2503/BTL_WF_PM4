@@ -100,12 +100,19 @@ namespace QLNhanSu.Views
 
         private void button3_Click(object sender, EventArgs e) // Tìm kiếm
         {
-            int timkiem = Convert.ToInt32(textBox4.Text);
+            if(IsNumber(textBox4.Text))
+            {int timkiem = Convert.ToInt32(textBox4.Text);
             var st = db.tbl_ChamCongs.Where(z => z.ma_nhan_vien == timkiem);
             dataGridView2.DataSource = st;
             dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            else
+            {
+                MessageBox.Show("Dữ liệu không hợp lệ");
+                return;
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
